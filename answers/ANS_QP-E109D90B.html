@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Answer Key — QP-E109D90B</title>
+<meta name="color-scheme" content="light dark">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f0fdf4; /* Light Green Tint */
+  --paper: #ffffff;
+  --text: #111827;
+  --text-mute: #6b7280;
+  --green: #16a34a;
+  --border: #e5e7eb;
+  --font: "Inter", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #064e3b; --paper: #0f172a; --text: #f3f4f6; --text-mute: #9ca3af; --border: #1f2937; }
+}
+
+body { margin: 0; padding: 0; font-family: var(--font); background: var(--bg); color: var(--text); }
+
+.container { display: flex; justify-content: center; padding: 30px 20px; }
+.sheet { width: 100%; max-width: 900px; background: var(--paper); padding: 35px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid var(--border); }
+
+/* Header */
+.header { text-align: center; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; }
+.header h1 { margin: 0; color: var(--green); font-size: 24px; font-weight: 800; }
+.header p { margin: 5px 0 0; color: var(--text-mute); font-size: 14px; }
+
+/* Grid Layout for Answers */
+.ans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Smart Columns */
+  gap: 15px;
+}
+
+/* Individual Answer Card */
+.ans-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 15px;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Top Row: Q Number & Answer */
+.card-top { display: flex; justify-content: space-between; align-items: center; }
+
+.q-badge {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.ans-badge {
+  background: #dcfce7; /* Light Green */
+  color: var(--green);
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #bbf7d0;
+}
+
+/* Explanation Box */
+.exp {
+  background: #f9fafb; /* Gray bg */
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.5;
+}
+@media (prefers-color-scheme: dark) { .exp { background: #1f2937; } .ans-badge { background: #065f46; border-color: #047857; color: #fff; } }
+
+/* Footer */
+.footer { margin-top: 30px; text-align: center; font-size: 12px; color: var(--text-mute); border-top: 1px dashed var(--border); padding-top: 15px; }
+
+@media (max-width: 600px) {
+  .sheet { padding: 20px; }
+  .ans-grid { grid-template-columns: 1fr; } /* 1 Column on Mobile */
+}
+@media print {
+  body { background: white; }
+  .sheet { box-shadow: none; border: none; padding: 0; }
+  .ans-card { break-inside: avoid; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="sheet">
+    
+    <header class="header">
+      <h1>Answer Key</h1>
+      <p>Skill Course • Excel Formulas</p>
+      <div style="margin-top:5px; font-size:12px; opacity:0.7">Paper ID: QP-E109D90B</div>
+    </header>
+
+    <div class="ans-grid">
+      
+      <!-- BACKEND LOOP for Answers -->
+      <section class="answer-block" aria-label="Answer for question 1">
+  <div class="q-title">Q1. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>संख्याओं को जोड़ने के लिए</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">SUM फ़ंक्शन का उपयोग एक या एक से अधिक संख्याओं का योग निकालने के लिए किया जाता है।</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 2">
+  <div class="q-title">Q2. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>औसत निकालना</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">AVERAGE फ़ंक्शन का उपयोग दिए गए संख्याओं का औसत निकालने के लिए किया जाता है।</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 3">
+  <div class="q-title">Q3. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>सत्य या असत्य</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">IF फ़ंक्शन का उपयोग एक शर्त के आधार पर दो संभावित परिणामों में से एक को चुनने के लिए किया जाता है।</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 4">
+  <div class="q-title">Q4. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>पाठ को जोड़ना</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">CONCATENATE फ़ंक्शन का उपयोग विभिन्न पाठ स्ट्रिंग्स को एक साथ जोड़ने के लिए किया जाता है।</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 5">
+  <div class="q-title">Q5. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>डेटा को खोजने के लिए</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">VLOOKUP फ़ंक्शन का उपयोग एक तालिका में एक विशेष मान को खोजने और उसके संबंधित मान को प्राप्त करने के लिए किया जाता है।</div>
+</section>
+
+      <!-- 
+      EXAMPLE STRUCTURE (For Backend):
+      <div class="ans-card">
+        <div class="card-top">
+          <span class="q-badge">Q1.</span>
+          <span class="ans-badge">Ans: B</span>
+        </div>
+        <div class="exp">
+          <b>Solution:</b><br>
+          Because photosynthesis requires sunlight to produce energy.
+        </div>
+      </div>
+      -->
+
+    </div>
+
+    <footer class="footer">
+      Generated by AI Paper Generator
+    </footer>
+
+  </div>
+</div>
+</body>
+</html>
