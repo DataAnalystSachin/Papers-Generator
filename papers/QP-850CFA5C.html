@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Question Paper — QP-850CFA5C</title>
+<meta name="color-scheme" content="light dark">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ========== VARIABLES ========== */
+:root {
+  --bg: #f8fafc;
+  --paper: #ffffff;
+  --text: #1e293b;
+  --text-light: #64748b;
+  --accent: #2563eb; /* Royal Blue */
+  --border: #e2e8f0;
+  --radius: 12px;
+  --max-width: 900px;
+  --font: "Inter", sans-serif;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --paper: #1e293b;
+    --text: #f1f5f9;
+    --text-light: #94a3b8;
+    --border: #334155;
+  }
+}
+
+/* ========== BASE STYLES ========== */
+body { margin: 0; padding: 0; font-family: var(--font); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+
+.container { display: flex; justify-content: center; padding: 30px 20px; min-height: 100vh; }
+
+.sheet {
+  width: 100%;
+  max-width: var(--max-width);
+  background: var(--paper);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+/* Header */
+.header { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 20px; border-bottom: 2px solid var(--border); margin-bottom: 30px; }
+.brand { display: flex; align-items: center; gap: 15px; }
+.brand img { width: 60px; height: 60px; object-fit: contain; border-radius: 8px; border: 1px solid var(--border); padding: 2px; background: #fff; }
+.brand-info h2 { margin: 0; font-size: 22px; font-weight: 800; }
+.brand-info p { margin: 2px 0 0; color: var(--text-light); font-size: 14px; }
+.meta-info { text-align: right; font-size: 14px; color: var(--text-light); }
+.meta-info strong { color: var(--text); }
+
+/* Title & Badges */
+.title-sec { text-align: center; margin-bottom: 30px; }
+.title-sec h1 { margin: 0; font-size: 24px; color: var(--accent); }
+.badges { display: flex; justify-content: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.badge { background: #eff6ff; color: var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid rgba(37,99,235,0.2); }
+
+/* Instructions */
+.instructions { background: #f1f5f9; padding: 15px; border-radius: 8px; margin-bottom: 40px; font-size: 14px; color: var(--text-light); border-left: 4px solid var(--text-light); }
+
+/* ========== QUESTIONS (THE MAIN PART) ========== */
+.questions-list { list-style: none; padding: 0; margin: 0; }
+
+.question-box {
+  /* BIG GAP between questions */
+  margin-bottom: 35px; 
+  padding-bottom: 15px;
+  border-bottom: 1px dashed var(--border); /* Optional subtle divider */
+}
+/* Remove border from last question */
+.question-box:last-child { border-bottom: none; margin-bottom: 0; }
+
+/* The Question Text Area */
+.q-text {
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+/* The Number (e.g., "1.") */
+.q-num {
+  font-weight: 800;
+  color: var(--accent);
+  margin-right: 8px;
+  font-size: 18px;
+  display: inline-block; /* Keeps it with text */
+}
+
+/* Image */
+.q-img { margin: 10px 0; max-width: 100%; border-radius: 8px; display: block; }
+
+/* Options Grid */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Columns on Desktop */
+  gap: 12px;
+  margin-top: 15px;
+  padding-left: 28px; /* Indent options slightly to align with text */
+}
+
+.option-item {
+  background: transparent;
+  padding: 8px 0;
+  font-size: 15px;
+  color: var(--text);
+  /* Hover effect for readability */
+  transition: color 0.2s;
+}
+.option-item:hover { color: var(--accent); }
+
+/* Footer */
+.footer { margin-top: 50px; padding-top: 20px; border-top: 2px solid var(--border); display: flex; justify-content: space-between; align-items: center; color: var(--text-light); font-size: 13px; }
+.qr img { width: 70px; height: 70px; }
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .sheet { padding: 20px; }
+  .header { flex-direction: column; text-align: center; align-items: center; }
+  .brand { flex-direction: column; }
+  .meta-info { text-align: center; margin-top: 10px; }
+  
+  /* Stack options vertically on mobile */
+  .options-grid { grid-template-columns: 1fr; padding-left: 0; }
+  
+  .q-text { font-size: 16px; }
+}
+
+@media print {
+  body { background: white; }
+  .container { padding: 0; display: block; }
+  .sheet { box-shadow: none; border: none; padding: 0; width: 100%; max-width: 100%; }
+  .question-box { page-break-inside: avoid; }
+  .badge { border: 1px solid #000; color: #000; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="sheet">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <img src="" id="logoImg" onerror="this.style.display='none'">
+        <div class="brand-info">
+          <h2>Skill Course</h2>
+          <p>Computer Applications</p>
+        </div>
+      </div>
+      <div class="meta-info">
+        <div>Paper ID: <strong>QP-850CFA5C</strong></div>
+        <div>Date: <strong>30-11-2025</strong></div>
+      </div>
+    </header>
+
+    <div class="title-sec">
+      <h1>Excel Formulas</h1>
+      <div class="badges">
+        <div class="badge">Class: Advanced</div>
+        <div class="badge">Questions: 3</div>
+        <div class="badge">Marks/Q: 1</div>
+        <div class="badge">Time: {{TIME_ALLOWED}}</div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>Instructions:</strong> Check all questions carefully. Marks are mentioned in the header. Attempt all questions.
+    </div>
+
+    <!-- Questions Container -->
+    <div class="questions-list">
+      
+      <!-- 
+        BACKEND LOOP:
+        Python/Node se aapko bas yahi repeat karna hai:
+      -->
+      <li class="question" id="q1" aria-label="Question 1">
+  <div class="q-num" aria-hidden="true">1</div>
+  <div class="q-text">Which of the following Excel functions can be used to calculate the standard deviation of a sample dataset?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> STDEV.P</li><li role="listitem"><strong>B.</strong> STDEV.S</li><li role="listitem"><strong>C.</strong> VAR.P</li><li role="listitem"><strong>D.</strong> VAR.S</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q2" aria-label="Question 2">
+  <div class="q-num" aria-hidden="true">2</div>
+  <div class="q-text">In Excel, what will be the result of the formula =IF(A1&gt;10, &#x27;High&#x27;, &#x27;Low&#x27;) when A1 is equal to 10?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> High</li><li role="listitem"><strong>B.</strong> Low</li><li role="listitem"><strong>C.</strong> Error</li><li role="listitem"><strong>D.</strong> 10</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q3" aria-label="Question 3">
+  <div class="q-num" aria-hidden="true">3</div>
+  <div class="q-text">What does the VLOOKUP function return if the lookup value is not found in the specified range?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> #N/A</li><li role="listitem"><strong>B.</strong> 0</li><li role="listitem"><strong>C.</strong> Blank</li><li role="listitem"><strong>D.</strong> Error</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+      
+      <!-- 
+      EXAMPLE STRUCTURE (For Backend):
+      <div class="question-box">
+        <div class="q-text">
+          <span class="q-num">1.</span> What is the capital of India?
+        </div>
+        
+        <img src="..." class="q-img" onerror="this.style.display='none'">
+
+        <div class="options-grid">
+          <div class="option-item">A) Mumbai</div>
+          <div class="option-item">B) New Delhi</div>
+          <div class="option-item">C) Kolkata</div>
+          <div class="option-item">D) Chennai</div>
+        </div>
+      </div>
+      -->
+
+    </div>
+
+    <footer class="footer">
+      <div>Generated by <strong>AI Paper Generator</strong></div>
+      <div class="qr">
+        <img src="" onerror="this.style.display='none'">
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script>
+  // Simple check to set default institute name
+  var inst = document.querySelector('.brand-info h2');
+  if(inst && !inst.innerText.trim()) inst.innerText = "Examination Paper";
+</script>
+</body>
+</html>
