@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Skill Course • Question Paper — QP-FFC08BCF</title>
+
+<style>
+/* =====================================
+   🔥 Ultra Premium Exam Paper UI
+   Clean • Spacious • Print-Friendly • Modern
+   ===================================== */
+
+:root{
+  --text:#0a1220;
+  --primary:#0066ff;
+  --muted:#6c7485;
+  --paper:#ffffff;
+  --bg:#eef2f9;
+  --radius:12px;
+  --shadow:0 20px 45px rgba(0,0,0,0.08);
+  --max:1100px;
+  --q-num-size:46px;
+  --q-font:17px;
+  --desktop-margin:60px;
+}
+
+/* Global Layout */
+html,body{
+  margin:0;padding:0;
+  background:var(--bg);
+  font-family:Inter,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+.page{
+  width:100%;
+  max-width:var(--max);
+  background:var(--paper);
+  margin:auto;
+  margin-top:var(--desktop-margin);
+  margin-bottom:var(--desktop-margin);
+  padding:50px 60px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  position:relative;
+}
+
+/* Soft Watermark */
+.page::after{
+  content:"Skill Course";
+  position:absolute;
+  inset:0;display:flex;
+  align-items:center;justify-content:center;
+  font-size:70px;font-weight:800;
+  color:var(--muted);opacity:0.05;
+  pointer-events:none;
+}
+
+/* Header */
+.header{
+  display:flex;justify-content:space-between;
+  align-items:center;margin-bottom:35px;
+}
+.logo{
+  width:85px;height:85px;
+  object-fit:contain;border-radius:12px;
+  background:#fff;padding:8px;
+  border:1px solid rgba(0,0,0,0.05);
+}
+.title-block{text-align:right;}
+.head-title{
+  font-size:29px;font-weight:800;margin:0;
+}
+.sub{
+  color:var(--muted);font-size:14px;margin-top:3px;
+}
+
+/* Meta Info Line (Class/Subject/Marks/Total Questions) */
+.badge-row{
+  margin-top:25px;display:flex;
+  gap:18px;flex-wrap:wrap;
+  font-size:15px;color:var(--muted);
+}
+.badge{
+  padding:6px 14px;border-radius:99px;
+  background:#f5f8ff;border:1px solid #d9e6ff;
+}
+
+/* Instructions box */
+.instructions{
+  background:#f8fbff;border-left:6px solid var(--primary);
+  padding:14px 18px;border-radius:10px;
+  margin-top:28px;margin-bottom:38px;
+  color:#333;
+}
+
+/* =========================
+   🔥 QUESTION SYSTEM
+   ========================= */
+
+.question{
+  display:flex;gap:22px;
+  margin-bottom:32px;
+  align-items:flex-start;
+}
+.q-num{
+  width:var(--q-num-size);
+  height:var(--q-num-size);
+  border-radius:9px;
+  background:var(--primary);
+  color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:18px;
+  flex-shrink:0;
+  box-shadow:0 10px 22px rgba(0,0,0,0.14);
+}
+.q-body{flex:1;}
+.q-body p{
+  font-size:var(--q-font);line-height:1.62;margin:0;
+}
+.marks{
+  margin-top:8px;
+  display:inline-block;
+  background:#ebf3ff;color:var(--primary);
+  padding:4px 10px;border-radius:8px;
+  font-size:13px;font-weight:600;
+}
+
+/* MCQ options */
+.options{
+  margin-top:14px;padding-left:6px;
+}
+.options li{
+  margin:6px 0;padding:10px;
+  background:#f8fbff;border-radius:8px;
+  list-style:none;font-size:15px;
+  border:1px solid #e5eaf6;
+}
+
+/* Footer */
+.footer{
+  margin-top:55px;padding-top:16px;
+  border-top:1px dashed #cfd8e8;
+  display:flex;justify-content:space-between;
+  align-items:center;font-size:14px;color:var(--muted);
+}
+.qr img{
+  width:90px;height:90px;
+  object-fit:contain;
+  border-radius:10px;background:#fff;
+  padding:8px;border:1px solid #eee;
+}
+
+/* =====================================
+   📱 RESPONSIVE OPTIMIZATION
+   =====================================*/
+
+@media (max-width:1000px){
+  .page{padding:38px 32px;margin-top:30px;margin-bottom:30px}
+}
+@media (max-width:680px){
+  .header{flex-direction:column;gap:12px;text-align:center}
+  .title-block{text-align:center}
+}
+@media (max-width:520px){
+  :root{--q-num-size:42px;--q-font:16px}
+  .question{flex-direction:column;align-items:center}
+  .q-body{text-align:left;margin-top:10px;width:100%}
+  .badge-row{justify-content:center;text-align:center}
+  .page{padding:26px;margin:0;border-radius:0;box-shadow:none}
+}
+@media print{
+  body,html{background:#fff}
+  .page{box-shadow:none;border-radius:0;margin:0;padding:18mm}
+  .page::after{display:none}
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="header">
+    <img src="" class="logo" onerror="this.style.display='none'">
+    <div class="title-block">
+      <h1 class="head-title">Skill Course</h1>
+      <div class="sub">Computer Applications — Excel Formulas</div>
+      <div class="sub">Paper ID: QP-FFC08BCF • Date: 30-11-2025</div>
+    </div>
+  </div>
+
+  <div class="badge-row">
+    <div class="badge">Class — Advanced</div>
+    <div class="badge">Difficulty — Hard</div>
+    <div class="badge">Marks/Question — 1</div>
+    <div class="badge">Total Questions — 5</div>
+  </div>
+
+  <div class="instructions">
+    <b>Instructions:</b>
+    <ul>
+      <li>Read questions carefully before answering.</li>
+      <li>Answer on separate sheet unless mentioned.</li>
+      <li>Marks are indicated next to each question.</li>
+    </ul>
+  </div>
+
+  <!-- Injected question blocks -->
+  <li class="question" id="q1" aria-label="Question 1">
+  <div class="q-num" aria-hidden="true">1</div>
+  <div class="q-text">Which of the following formulas will return the sum of values in cells A1 to A10, excluding any errors?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> =SUM(A1:A10)</li><li role="listitem"><strong>B.</strong> =SUMIF(A1:A10, &quot;&lt;&gt;#N/A&quot;)</li><li role="listitem"><strong>C.</strong> =SUMIF(A1:A10, &quot;&lt;&gt;#VALUE!&quot;)</li><li role="listitem"><strong>D.</strong> =SUMIFS(A1:A10, A1:A10, &quot;&lt;&gt;#N/A&quot;)</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q2" aria-label="Question 2">
+  <div class="q-num" aria-hidden="true">2</div>
+  <div class="q-text">What is the result of the formula =IF(AND(A1&gt;10, B1&lt;5), &quot;Yes&quot;, &quot;No&quot;) if A1 is 15 and B1 is 3?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> Yes</li><li role="listitem"><strong>B.</strong> No</li><li role="listitem"><strong>C.</strong> Error</li><li role="listitem"><strong>D.</strong> False</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q3" aria-label="Question 3">
+  <div class="q-num" aria-hidden="true">3</div>
+  <div class="q-text">Which function would you use to find the average of a range of cells while ignoring any text values?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> =AVERAGE(A1:A10)</li><li role="listitem"><strong>B.</strong> =AVERAGEIF(A1:A10, &quot;&lt;&gt;0&quot;)</li><li role="listitem"><strong>C.</strong> =AVERAGEIFS(A1:A10, A1:A10, &quot;&gt;0&quot;)</li><li role="listitem"><strong>D.</strong> =AVERAGEA(A1:A10)</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q4" aria-label="Question 4">
+  <div class="q-num" aria-hidden="true">4</div>
+  <div class="q-text">In Excel, what does the formula =VLOOKUP(D1, A1:B10, 2, FALSE) do?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> Looks for D1 in column A and returns the corresponding value from column B</li><li role="listitem"><strong>B.</strong> Looks for D1 in column B and returns the corresponding value from column A</li><li role="listitem"><strong>C.</strong> Returns the value in D1 if it exists in the range A1:B10</li><li role="listitem"><strong>D.</strong> Returns an error if D1 is not found</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q5" aria-label="Question 5">
+  <div class="q-num" aria-hidden="true">5</div>
+  <div class="q-text">What will be the output of the formula =TEXT(TODAY(), &quot;dd-mm-yyyy&quot;)?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> Current date in dd-mm-yyyy format</li><li role="listitem"><strong>B.</strong> Current date in mm-dd-yyyy format</li><li role="listitem"><strong>C.</strong> Current date in yyyy-mm-dd format</li><li role="listitem"><strong>D.</strong> Error</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+  <div class="footer">
+      <span>Generated by AI Paper Generator</span>
+      <div class="qr">
+          <img src="" onerror="this.style.display='none'">
+      </div>
+  </div>
+
+</div>
+</body>
+</html>
