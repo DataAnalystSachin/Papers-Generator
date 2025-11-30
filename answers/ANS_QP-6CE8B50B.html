@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Answer Key — QP-6CE8B50B</title>
+<meta name="color-scheme" content="light dark">
+
+<style>
+:root{
+  --bg:#f5f7fb;
+  --paper:#ffffff;
+  --text:#0b1220;
+  --muted:#6b7280;
+  --accent:#0b84ff;
+  --border:#e6ecf8;
+  --radius:12px;
+  --max-width:920px;
+  --font-body: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  --ans-num-size:44px;
+}
+
+/* Page layout */
+html,body{height:100%;margin:0;padding:0;background:var(--bg);font-family:var(--font-body);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{display:flex;justify-content:center;padding:28px}
+.sheet{
+  width:100%;
+  max-width:var(--max-width);
+  background:var(--paper);
+  padding:28px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  box-shadow:0 10px 30px rgba(8,14,30,0.06);
+}
+
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:10px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:56px;height:56px;object-fit:contain;border-radius:10px;padding:6px}
+.brand .org{font-weight:700;font-size:18px}
+.meta{font-size:13px;color:var(--muted)}
+
+/* Title */
+.title{font-size:20px;font-weight:700;margin:0}
+.subtitle{color:var(--muted);font-size:13px;margin-top:6px}
+
+/* Answer blocks */
+.answers{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.answer-block{
+  display:grid;
+  grid-template-columns: var(--ans-num-size) 1fr;
+  gap:12px;
+  align-items:start;
+  padding:12px;border-radius:10px;border:1px solid var(--border);background:var(--paper)
+}
+.answer-block .num{
+  display:flex;align-items:center;justify-content:center;width:var(--ans-num-size);height:var(--ans-num-size);background:var(--accent);color:#fff;border-radius:8px;font-weight:800;font-size:16px;
+}
+.answer-block .body{font-size:15px}
+.answer-block .answer{margin-top:4px;font-weight:700}
+.answer-block .explain{margin-top:8px;color:var(--muted);font-size:14px}
+
+/* Footer area */
+.footer{margin-top:18px;border-top:1px dashed var(--border);padding-top:12px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+
+/* Responsive */
+@media (max-width:640px){
+  :root{--ans-num-size:40px}
+  .sheet{padding:18px}
+  .brand img{width:48px;height:48px}
+  .title{font-size:18px}
+  .answer-block{grid-template-columns: var(--ans-num-size) 1fr}
+}
+@media (max-width:420px){
+  .answer-block{grid-template-columns: 1fr;grid-template-rows:auto auto}
+  .answer-block .num{width:48px;height:48px;margin-bottom:8px;border-radius:8px}
+}
+@media print{
+  body,html{background:white}
+  .container{padding:0}
+  .sheet{box-shadow:none;border-radius:0;border:none;margin:0;padding:14mm}
+}
+</style>
+</head>
+<body>
+  <div class="container" role="main">
+    <article class="sheet" aria-label="Answer Key QP-6CE8B50B">
+      <header class="header">
+        <div class="brand">
+          <img src="" alt="Skill Course logo" onerror="this.style.display='none'">
+          <div>
+            <div class="org">Skill Course</div>
+            <div class="meta">Computer Applications • Class: beginner</div>
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div class="meta">Paper ID: <strong>QP-6CE8B50B</strong></div>
+          <div class="meta">Date: <strong>30-11-2025</strong></div>
+        </div>
+      </header>
+
+      <div>
+        <h2 class="title">Answer Key</h2>
+        <div class="subtitle">Topic: Excel Formulas — Total Questions: 5</div>
+      </div>
+
+      <div class="answers" id="answersList">
+        <section class="answer-block" aria-label="Answer for question 1">
+  <div class="q-title">Q1. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>=AVERAGE(A1:A10)</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The AVERAGE function is the correct formula to calculate the average of a range in Excel.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 2">
+  <div class="q-title">Q2. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>Under</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The IF function checks if A1 is greater than 10; since it is not, it returns &#x27;Under&#x27;.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 3">
+  <div class="q-title">Q3. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>=COUNTA(B1:B20)</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The COUNTA function counts all non-empty cells in a specified range.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 4">
+  <div class="q-title">Q4. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>Looks for A1 in column B and returns the corresponding value from column C</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The VLOOKUP function searches for a value in the first column of a range and returns a value in the same row from a specified column.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 5">
+  <div class="q-title">Q5. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>Combines the text in A1 and B1 with a space in between</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The CONCATENATE function joins multiple text strings into one, and the space is added as a separator.</div>
+</section>
+      </div>
+
+      <div class="footer">
+        <div>Generated by <strong>AI Paper Generator</strong></div>
+        <div class="meta">Save this for records</div>
+      </div>
+    </article>
+  </div>
+
+<script>
+/* hide logo if empty and ensure institute present */
+(function(){
+  try{
+    var logo = document.querySelector('.brand img');
+    var inst = document.querySelector('.org');
+    if(logo && (!logo.src || logo.src.trim()==="" || logo.src==="")) logo.style.display='none';
+    if(inst && (!inst.innerText || inst.innerText.trim()==="")) inst.innerText = "Your Institute";
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
