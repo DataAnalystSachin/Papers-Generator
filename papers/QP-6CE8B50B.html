@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Question Paper — QP-6CE8B50B</title>
+<meta name="color-scheme" content="light dark">
+
+<style>
+/* ========== THEME VARIABLES ========== */
+:root{
+  --bg: #f5f7fb;
+  --paper: #ffffff;
+  --text: #0b1220;
+  --muted: #6b7280;
+  --accent: #0b84ff;
+  --accent-2: #0066cc;
+  --border: #e6ecf8;
+  --card-shadow: 0 12px 40px rgba(8,14,30,0.06);
+  --radius: 14px;
+  --max-width: 920px;
+  --font-body: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  --num-size: 56px; /* default large circle */
+  --num-font-size: 18px;
+  --gap: 18px;
+}
+
+/* Dark-mode support (if user agent prefers) */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg:#061426;
+    --paper:#071226;
+    --text:#e6eef9;
+    --muted:#98a3b6;
+    --border: rgba(255,255,255,0.04);
+  }
+}
+
+/* ========== LAYOUT ========== */
+html,body{height:100%;margin:0;padding:0;background:var(--bg);font-family:var(--font-body);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{display:flex;justify-content:center;padding:28px}
+.sheet{
+  width:100%;
+  max-width:var(--max-width);
+  background:var(--paper);
+  padding:28px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  box-shadow:var(--card-shadow);
+  position:relative;
+  overflow:hidden;
+}
+
+/* Watermark uses institute name (very faint) */
+.sheet::after{
+  content: "Skill Course";
+  position:absolute;
+  left:50%; top:48%;
+  transform:translate(-50%,-50%) rotate(-22deg);
+  font-size:64px;
+  color:var(--muted);
+  opacity:0.05;
+  pointer-events:none;
+  white-space:nowrap;
+}
+
+/* ========== HEADER ========== */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:var(--gap);
+  margin-bottom:12px;
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{width:72px;height:72px;object-fit:contain;border-radius:10px;border:1px solid rgba(0,0,0,0.04);background:#fff;padding:6px}
+.brand .org{font-weight:800;font-size:20px}
+.meta{font-size:13px;color:var(--muted)}
+
+/* Title area */
+.title-wrap{text-align:center;margin:10px 0 18px}
+.title-wrap h1{margin:0;font-size:20px;letter-spacing:0.2px}
+.title-wrap p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+/* Badges */
+.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.badge{
+  background:linear-gradient(180deg, rgba(6,102,255,0.07), rgba(6,102,255,0.02));
+  border-radius:999px;padding:8px 12px;border:1px solid rgba(6,102,255,0.06);
+  font-size:13px;color:var(--muted);
+}
+
+/* Instructions */
+.instructions{
+  border-left:4px solid var(--accent-2);
+  background:#fbfdff;padding:12px 14px;border-radius:8px;margin-bottom:18px;color:var(--muted);
+}
+
+/* ========== QUESTIONS LIST (GRID-based numbers) ========== */
+ol.questions{margin:0;padding:0;list-style:none}
+.question{
+  display:grid;
+  grid-template-columns: var(--num-size) 1fr;
+  grid-template-rows: auto;
+  gap:10px;
+  align-items:start;
+  counter-increment: q;
+  margin:14px 0;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--paper);
+  position:relative;
+  page-break-inside:avoid;
+}
+
+/* Number column */
+.question .q-num{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:var(--num-size);
+  height:var(--num-size);
+  min-width:var(--num-size);
+  border-radius:50%;
+  background:linear-gradient(180deg,var(--accent), #1270ff);
+  color:white;
+  font-weight:800;
+  font-size:var(--num-font-size);
+  box-shadow:0 8px 20px rgba(6,102,255,0.12);
+}
+
+/* Question text column */
+.question .q-text{
+  font-size:15px;
+  line-height:1.6;
+  padding-right:8px;
+}
+
+/* Mark badge (floats top-right of content column) */
+.question .marks{
+  justify-self:end;
+  align-self:start;
+  background:#eef7ff;border-radius:8px;padding:6px 8px;font-weight:700;color:var(--accent-2);font-size:12px;
+}
+
+/* Options styling */
+.options{margin-top:10px;padding-left:8px;display:block}
+.options li{margin:8px 0;padding:10px;border-radius:8px;background:#fbfdff;border:1px solid rgba(4,9,22,0.03);font-size:14px;list-style:none}
+
+/* Question image */
+.q-image img{max-width:100%;border-radius:8px;display:block;margin-top:8px}
+
+/* hint small */
+.hint{font-size:13px;color:var(--muted);margin-top:8px}
+
+/* Footer */
+.footer{
+  display:flex;justify-content:space-between;align-items:center;margin-top:22px;border-top:1px dashed var(--border);padding-top:12px;color:var(--muted);font-size:13px
+}
+.qr-box img{width:86px;height:86px;object-fit:contain;border-radius:8px;border:1px solid rgba(0,0,0,0.04);background:#fff;padding:6px}
+
+/* ========== RESPONSIVE ========== */
+/* Reduce number circle size on smaller widths */
+@media (max-width:920px){
+  :root{
+    --num-size:48px;
+    --num-font-size:16px;
+    --gap:14px;
+  }
+}
+@media (max-width:640px){
+  :root{
+    --num-size:44px;
+    --num-font-size:15px;
+    --gap:12px;
+  }
+  .sheet{padding:18px}
+  .title-wrap h1{font-size:18px}
+  .brand img{width:56px;height:56px}
+  .question{grid-template-columns: 44px 1fr;}
+}
+
+/* On very small screens stack number above content for safe layout */
+@media (max-width:420px){
+  .question{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding:10px;
+  }
+  .question .q-num{width:calc(var(--num-size));height:calc(var(--num-size));margin:0 auto 8px auto}
+  .question .marks{justify-self:start}
+  .title-wrap h1{font-size:16px}
+  .brand .org{font-size:16px}
+}
+
+/* Print rules */
+@media print{
+  body,html{background:white}
+  .container{padding:0}
+  .sheet{box-shadow:none;border-radius:0;border:none;margin:0;padding:14mm}
+  .sheet::after{display:none}
+  .question{page-break-inside:avoid}
+}
+
+/* small accessibility tweaks */
+.brand .org{line-height:1;}
+</style>
+</head>
+<body>
+  <div class="container" role="main">
+    <article class="sheet" aria-label="Question Paper QP-6CE8B50B">
+      <header class="header" role="banner">
+        <div class="brand" aria-hidden="false">
+          <img src="" alt="Skill Course logo" id="logoImg" onerror="this.style.display='none'">
+          <div>
+            <div class="org" id="instName">Skill Course</div>
+            <div class="meta" id="subjectMeta">Computer Applications</div>
+          </div>
+        </div>
+
+        <div style="text-align:right">
+          <div class="meta">Paper ID: <strong>QP-6CE8B50B</strong></div>
+          <div class="meta">Date: <strong>30-11-2025</strong></div>
+        </div>
+      </header>
+
+      <div class="title-wrap">
+        <h1 id="topicTitle">Excel Formulas — Question Paper</h1>
+        <p class="meta">beginner • Difficulty: Hard • Marks/Q: 1</p>
+      </div>
+
+      <div class="badges" role="list" aria-hidden="false">
+        <div class="badge">Class: <strong style="margin-left:6px">beginner</strong></div>
+        <div class="badge">Questions: <strong style="margin-left:6px">5</strong></div>
+        <div class="badge">Marks/Question: <strong style="margin-left:6px">1</strong></div>
+        <div class="badge">Difficulty: <strong style="margin-left:6px">Hard</strong></div>
+      </div>
+
+      <div class="instructions" role="note">
+        <strong>Instructions:</strong>
+        <ol style="margin:8px 0 0 18px;">
+          <li>Read each question carefully. Marks are shown with each question.</li>
+          <li>Answer in the space provided / separate answer sheet as instructed.</li>
+        </ol>
+      </div>
+
+      <!-- Insert full list of <li class="question"> blocks here (generator will produce) -->
+      <ol class="questions" id="questionsList" aria-live="polite">
+        <li class="question" id="q1" aria-label="Question 1">
+  <div class="q-num" aria-hidden="true">1</div>
+  <div class="q-text">Which of the following formulas will correctly calculate the average of the values in cells A1 to A10?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> =AVERAGE(A1:A10)</li><li role="listitem"><strong>B.</strong> =AVG(A1:A10)</li><li role="listitem"><strong>C.</strong> =MEAN(A1:A10)</li><li role="listitem"><strong>D.</strong> =SUM(A1:A10)/10</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q2" aria-label="Question 2">
+  <div class="q-num" aria-hidden="true">2</div>
+  <div class="q-text">What will be the result of the formula =IF(A1&gt;10, &#x27;Over&#x27;, &#x27;Under&#x27;) when A1 is 8?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> Over</li><li role="listitem"><strong>B.</strong> Under</li><li role="listitem"><strong>C.</strong> Error</li><li role="listitem"><strong>D.</strong> 10</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q3" aria-label="Question 3">
+  <div class="q-num" aria-hidden="true">3</div>
+  <div class="q-text">Which formula will return the number of non-empty cells in the range B1 to B20?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> =COUNTA(B1:B20)</li><li role="listitem"><strong>B.</strong> =COUNT(B1:B20)</li><li role="listitem"><strong>C.</strong> =COUNTIF(B1:B20, &#x27;&lt;&gt;&#x27;)</li><li role="listitem"><strong>D.</strong> =COUNTBLANK(B1:B20)</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q4" aria-label="Question 4">
+  <div class="q-num" aria-hidden="true">4</div>
+  <div class="q-text">In Excel, what does the formula =VLOOKUP(A1, B1:C10, 2, FALSE) do?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> Looks for A1 in column B and returns the corresponding value from column C</li><li role="listitem"><strong>B.</strong> Looks for A1 in column C and returns the corresponding value from column B</li><li role="listitem"><strong>C.</strong> Returns the value in A1 if found in B1:C10</li><li role="listitem"><strong>D.</strong> Counts the number of occurrences of A1 in B1:C10</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q5" aria-label="Question 5">
+  <div class="q-num" aria-hidden="true">5</div>
+  <div class="q-text">What does the formula =CONCATENATE(A1, &#x27; &#x27;, B1) do?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> Adds the values of A1 and B1</li><li role="listitem"><strong>B.</strong> Combines the text in A1 and B1 with a space in between</li><li role="listitem"><strong>C.</strong> Counts the characters in A1 and B1</li><li role="listitem"><strong>D.</strong> Returns the length of A1 and B1 combined</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+      </ol>
+
+      <footer class="footer">
+        <div>
+          <div>Generated by <strong>AI Paper Generator</strong></div>
+          <div class="meta">Keep this paper for records</div>
+        </div>
+        <div style="text-align:right">
+          <div class="qr-box" aria-hidden="false">
+            <img src="" alt="Scan QR to open online paper" id="qrImg" onerror="this.style.display='none'">
+          </div>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+<script>
+/* small DOM tweaks: hide logo if empty, ensure institute name present, hide QR if missing */
+(function(){
+  try{
+    var logoSrc = "".trim();
+    var img = document.getElementById('logoImg');
+    if(!logoSrc || logoSrc === "" || logoSrc === "None"){
+      if(img) img.style.display='none';
+    } else {
+      // allow the onerror to hide invalid images
+    }
+    var inst = document.getElementById('instName');
+    if(inst && (!inst.innerText || inst.innerText.trim()==="")){
+      inst.innerText = "Your Institute";
+    }
+    var qr = document.getElementById('qrImg');
+    if(qr && (!qr.src || qr.src.trim()==="")){
+      qr.style.display='none';
+    }
+  }catch(e){
+    // silent
+  }
+})();
+</script>
+</body>
+</html>
