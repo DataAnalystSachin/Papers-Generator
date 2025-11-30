@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Question Paper — QP-4F4C3A2B</title>
+
+<style>
+/* =========================
+   PROFESSIONAL PAPER TEMPLATE
+   - Print friendly
+   - Watermark support
+   - Responsive preview
+   - Replace placeholders:
+     QP-4F4C3A2B, Your Institute, , ,
+     beginner, Computer Applications, Excel Formulas, 30-11-2025,
+     5, 1, Easy,
+     <li class="question" id="q1">
+  <div class="q-num">1</div>
+  <div class="q-text">What function would you use to add up a range of cells in Excel?</div>
+  <div class="marks">1 marks</div>
+  <ul class="options">
+  <li><strong>A.</strong> SUM</li>
+  <li><strong>B.</strong> ADD</li>
+  <li><strong>C.</strong> TOTAL</li>
+  <li><strong>D.</strong> COUNT</li>
+</ul>
+
+</li>
+
+<li class="question" id="q2">
+  <div class="q-num">2</div>
+  <div class="q-text">Which of the following symbols is used to start a formula in Excel?</div>
+  <div class="marks">1 marks</div>
+  <ul class="options">
+  <li><strong>A.</strong> #</li>
+  <li><strong>B.</strong> =</li>
+  <li><strong>C.</strong> @</li>
+  <li><strong>D.</strong> $</li>
+</ul>
+
+</li>
+
+<li class="question" id="q3">
+  <div class="q-num">3</div>
+  <div class="q-text">What does the AVERAGE function do in Excel?</div>
+  <div class="marks">1 marks</div>
+  <ul class="options">
+  <li><strong>A.</strong> Counts the number of cells</li>
+  <li><strong>B.</strong> Finds the maximum value</li>
+  <li><strong>C.</strong> Calculates the mean of a set of numbers</li>
+  <li><strong>D.</strong> Finds the minimum value</li>
+</ul>
+
+</li>
+
+<li class="question" id="q4">
+  <div class="q-num">4</div>
+  <div class="q-text">Which function would you use to find the highest number in a range of cells?</div>
+  <div class="marks">1 marks</div>
+  <ul class="options">
+  <li><strong>A.</strong> MAX</li>
+  <li><strong>B.</strong> HIGH</li>
+  <li><strong>C.</strong> TOP</li>
+  <li><strong>D.</strong> LARGEST</li>
+</ul>
+
+</li>
+
+<li class="question" id="q5">
+  <div class="q-num">5</div>
+  <div class="q-text">What is the purpose of the IF function in Excel?</div>
+  <div class="marks">1 marks</div>
+  <ul class="options">
+  <li><strong>A.</strong> To create charts</li>
+  <li><strong>B.</strong> To perform conditional logic</li>
+  <li><strong>C.</strong> To format cells</li>
+  <li><strong>D.</strong> To sort data</li>
+</ul>
+
+</li>
+   ========================= */
+
+:root{
+  --bg:#f5f7fb;
+  --paper:#ffffff;
+  --text:#0b1220;
+  --muted:#6b7280;
+  --accent:#0b84ff;
+  --accent-2:#0066cc;
+  --border:#e6ecf8;
+  --card-shadow: 0 8px 30px rgba(8,14,30,0.06);
+  --radius:12px;
+  --max-width:920px;
+  --font-body: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Page layout */
+html,body{height:100%;margin:0;padding:0;background:var(--bg);font-family:var(--font-body);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{display:flex;justify-content:center;padding:28px}
+.sheet{
+  width:100%;
+  max-width:var(--max-width);
+  background:var(--paper);
+  padding:36px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  box-shadow:var(--card-shadow);
+  position:relative;
+  overflow:hidden;
+}
+
+/* Light watermark */
+.sheet::after{
+  content: "Your Institute";
+  position:absolute;
+  left:50%; top:48%;
+  transform:translate(-50%,-50%) rotate(-22deg);
+  font-size:64px;
+  color:var(--muted);
+  opacity:0.06;
+  pointer-events:none;
+  white-space:nowrap;
+}
+
+/* Header */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  margin-bottom:12px;
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{width:68px;height:68px;object-fit:contain;border-radius:10px;border:1px solid rgba(0,0,0,0.03);background:#fff;padding:6px}
+.brand .org{font-weight:700;font-size:18px}
+.meta{font-size:13px;color:var(--muted)}
+
+/* Title block */
+.title-wrap{text-align:center;margin:8px 0 18px 0}
+.title-wrap h1{margin:0;font-size:20px;letter-spacing:0.2px}
+.title-wrap p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+/* Info badges */
+.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.badge{
+  background:linear-gradient(180deg, rgba(6,102,255,0.07), rgba(6,102,255,0.02));
+  border-radius:999px;padding:8px 12px;border:1px solid rgba(6,102,255,0.06);
+  font-size:13px;color:var(--muted);
+}
+
+/* Instruction box */
+.instructions{
+  border-left:4px solid var(--accent-2);
+  background:#fbfdff;padding:12px 14px;border-radius:8px;margin-bottom:18px;color:var(--muted);
+}
+
+/* Questions list (numbered) */
+ol.questions{margin:0;padding:0 6px 6px 26px;counter-reset:qnum}
+.question{
+  counter-increment:qnum;
+  margin:14px 0;padding:12px;border-radius:10px;border:1px solid var(--border);
+  background:#ffffff;
+  position:relative;
+  page-break-inside:avoid;
+}
+.question .q-num{
+  position:absolute;left:-26px;top:16px;background:var(--accent);color:white;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:700;box-shadow:0 6px 18px rgba(6,102,255,0.12)
+}
+.question .q-text{margin-right:86px;font-size:15px;line-height:1.55}
+.question .marks{position:absolute;right:12px;top:12px;background:#eef7ff;border-radius:8px;padding:6px 8px;font-weight:700;color:var(--accent-2);font-size:12px}
+
+/* Options (for MCQ) */
+.options{margin-top:10px;padding-left:16px}
+.options li{margin:6px 0;padding:8px 10px;border-radius:8px;background:#fbfdff;border:1px solid rgba(4,9,22,0.03);font-size:14px}
+
+/* Footer */
+.footer{
+  display:flex;justify-content:space-between;align-items:center;margin-top:22px;border-top:1px dashed var(--border);padding-top:12px;color:var(--muted);font-size:13px
+}
+.qr-box img{width:86px;height:86px;object-fit:contain;border-radius:8px;border:1px solid rgba(0,0,0,0.04);background:#fff;padding:6px}
+
+/* Responsive */
+@media (max-width:780px){
+  .sheet{padding:18px}
+  .brand img{width:56px;height:56px}
+  .question .q-text{margin-right:0}
+  .question .q-num{left:8px}
+}
+
+/* Print formatting */
+@media print{
+  body,html{background:white}
+  .container{padding:0}
+  .sheet{box-shadow:none;border-radius:0;border:none;margin:0;padding:20mm}
+  .sheet::after{display:none}
+  .question{page-break-inside:avoid}
+  .qr-box img{display:block}
+}
+</style>
+</head>
+<body>
+  <div class="container" role="main">
+    <article class="sheet" aria-label="Question Paper QP-4F4C3A2B">
+      <header class="header" role="banner">
+        <div class="brand" aria-hidden="false">
+          <img src="" alt="Your Institute logo" onerror="this.style.display='none'">
+          <div>
+            <div class="org">Your Institute</div>
+            <div class="meta">Computer Applications</div>
+          </div>
+        </div>
+
+        <div style="text-align:right">
+          <div class="meta">Paper ID: <strong>QP-4F4C3A2B</strong></div>
+          <div class="meta">Date: <strong>30-11-2025</strong></div>
+        </div>
+      </header>
+
+      <div class="title-wrap">
+        <h1>Excel Formulas — Question Paper</h1>
+        <p class="meta">beginner • Difficulty: Easy • Marks/Q: 1</p>
+      </div>
+
+      <div class="badges" role="list" aria-hidden="false">
+        <div class="badge">Class: <strong style="margin-left:6px">beginner</strong></div>
+        <div class="badge">Questions: <strong style="margin-left:6px">5</strong></div>
+        <div class="badge">Marks/Question: <strong style="margin-left:6px">1</strong></div>
+        <div class="badge">Difficulty: <strong style="margin-left:6px">Easy</strong></div>
+      </div>
+
+      <div class="instructions" role="note">
+        <strong>Instructions:</strong>
+        <ol style="margin:8px 0 0 18px;">
+          <li>Read each question carefully. Marks are shown with each question.</li>
+          <li>Answer in the space provided / separate answer sheet as instructed.</li>
+        </ol>
+      </div>
+
+      <!-- Insert full list of <li class="question"> blocks here -->
+      <ol class="questions" id="questionsList" aria-live="polite">
+        <li class="question" id="q1">
+  <div class="q-num">1</div>
+  <div class="q-text">What function would you use to add up a range of cells in Excel?</div>
+  <div class="marks">1 marks</div>
+  <ul class="options">
+  <li><strong>A.</strong> SUM</li>
+  <li><strong>B.</strong> ADD</li>
+  <li><strong>C.</strong> TOTAL</li>
+  <li><strong>D.</strong> COUNT</li>
+</ul>
+
+</li>
+
+<li class="question" id="q2">
+  <div class="q-num">2</div>
+  <div class="q-text">Which of the following symbols is used to start a formula in Excel?</div>
+  <div class="marks">1 marks</div>
+  <ul class="options">
+  <li><strong>A.</strong> #</li>
+  <li><strong>B.</strong> =</li>
+  <li><strong>C.</strong> @</li>
+  <li><strong>D.</strong> $</li>
+</ul>
+
+</li>
+
+<li class="question" id="q3">
+  <div class="q-num">3</div>
+  <div class="q-text">What does the AVERAGE function do in Excel?</div>
+  <div class="marks">1 marks</div>
+  <ul class="options">
+  <li><strong>A.</strong> Counts the number of cells</li>
+  <li><strong>B.</strong> Finds the maximum value</li>
+  <li><strong>C.</strong> Calculates the mean of a set of numbers</li>
+  <li><strong>D.</strong> Finds the minimum value</li>
+</ul>
+
+</li>
+
+<li class="question" id="q4">
+  <div class="q-num">4</div>
+  <div class="q-text">Which function would you use to find the highest number in a range of cells?</div>
+  <div class="marks">1 marks</div>
+  <ul class="options">
+  <li><strong>A.</strong> MAX</li>
+  <li><strong>B.</strong> HIGH</li>
+  <li><strong>C.</strong> TOP</li>
+  <li><strong>D.</strong> LARGEST</li>
+</ul>
+
+</li>
+
+<li class="question" id="q5">
+  <div class="q-num">5</div>
+  <div class="q-text">What is the purpose of the IF function in Excel?</div>
+  <div class="marks">1 marks</div>
+  <ul class="options">
+  <li><strong>A.</strong> To create charts</li>
+  <li><strong>B.</strong> To perform conditional logic</li>
+  <li><strong>C.</strong> To format cells</li>
+  <li><strong>D.</strong> To sort data</li>
+</ul>
+
+</li>
+      </ol>
+
+      <footer class="footer">
+        <div>
+          <div>Generated by <strong>AI Paper Generator</strong></div>
+          <div class="meta">Keep this paper for records</div>
+        </div>
+        <div style="text-align:right">
+          <div class="qr-box" aria-hidden="false">
+            <img src="" alt="Scan QR to open online paper" onerror="this.style.display='none'">
+          </div>
+        </div>
+      </footer>
+    </article>
+  </div>
+</body>
+</html>
