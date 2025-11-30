@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Answer Key — QP-3582313C</title>
+<meta name="color-scheme" content="light dark">
+
+<!-- Preload Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ========== THEME VARIABLES ========== */
+:root {
+  --bg: #f0fdf4; /* Very light green hint for Answer Key vibe */
+  --paper: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --success: #059669;      /* Professional Green */
+  --success-bg: #d1fae5;
+  --accent: #10b981;
+  --border: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+  --max-width: 1000px; /* Slightly wider for grid layout */
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #064e3b; /* Dark green bg */
+    --paper: #0f172a;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --success: #34d399;
+    --success-bg: rgba(5, 150, 105, 0.2);
+    --border: #1e293b;
+  }
+}
+
+/* ========== RESET & BASE ========== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; font-family: var(--font-body); background: var(--bg); color: var(--text-main); -webkit-font-smoothing: antialiased; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* ========== MAIN SHEET ========== */
+.sheet {
+  width: 100%;
+  max-width: var(--max-width);
+  background: var(--paper);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border);
+}
+
+/* ========== HEADER ========== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+}
+.brand { display: flex; align-items: center; gap: 15px; }
+.brand img {
+  width: 50px; height: 50px; 
+  object-fit: contain; 
+  background: #fff; 
+  border-radius: 8px; 
+  border: 1px solid var(--border);
+  padding: 4px;
+}
+.brand .org-name { font-size: 20px; font-weight: 800; line-height: 1.2; }
+.brand .meta-text { font-size: 13px; color: var(--text-muted); }
+
+.paper-info { text-align: right; font-size: 13px; color: var(--text-muted); }
+.paper-info strong { color: var(--text-main); }
+
+/* Title Section */
+.key-title { text-align: center; margin-bottom: 30px; }
+.key-title h1 { margin: 0; font-size: 26px; font-weight: 800; color: var(--success); }
+.key-title p { margin: 5px 0 0; color: var(--text-muted); font-size: 14px; }
+
+/* ========== ANSWER GRID SYSTEM (Responsive) ========== */
+.answers-grid {
+  display: grid;
+  /* Auto-fit: Creates 2 columns on Laptop, 1 on Mobile automatically */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+  gap: 16px;
+}
+
+.answer-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.answer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--success);
+}
+
+/* Top Row: Question Number & Correct Option */
+.ans-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.q-badge {
+  background: var(--text-main);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.correct-option {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--success);
+  background: var(--success-bg);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+/* Explanation Section */
+.explanation {
+  background: var(--bg); /* Slight contrast background */
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  flex-grow: 1; /* Ensures cards are equal height */
+}
+.explanation strong { color: var(--text-main); display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Footer */
+.footer {
+  margin-top: 30px;
+  border-top: 1px dashed var(--border);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .sheet { padding: 20px; }
+  .header { flex-direction: column; text-align: center; gap: 15px; align-items: center; }
+  .brand { flex-direction: column; }
+  .paper-info { text-align: center; }
+  .key-title h1 { font-size: 22px; }
+  
+  /* Force 1 column on mobile to prevent squishing */
+  .answers-grid { grid-template-columns: 1fr; }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+  body { background: white; }
+  .container { padding: 0; display: block; }
+  .sheet {
+    box-shadow: none; border: none; max-width: 100%; width: 100%; padding: 0;
+  }
+  .answer-card {
+    break-inside: avoid; /* Prevents cutting card in half across pages */
+    border: 1px solid #ddd;
+    box-shadow: none;
+  }
+  .explanation { background: #f9f9f9; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="sheet">
+      
+      <!-- Header -->
+      <header class="header">
+        <div class="brand">
+          <img src="" alt="Logo" id="logoImg" onerror="this.style.display='none'">
+          <div>
+            <div class="org-name" id="instName">Skill Course</div>
+            <div class="meta-text">Computer Applications • Class Advanced</div>
+          </div>
+        </div>
+        <div class="paper-info">
+          <div>Paper ID: <strong>QP-3582313C</strong></div>
+          <div>Date: <strong>30-11-2025</strong></div>
+        </div>
+      </header>
+
+      <div class="key-title">
+        <h1>Answer Key & Solutions</h1>
+        <p>Topic: Excel Formulas • Difficulty: Hard</p>
+      </div>
+
+      <!-- Grid of Answers -->
+      <div class="answers-grid" id="answersList">
+        
+        <!-- 
+           BACKEND NOTE:
+           Replace <section class="answer-block" aria-label="Answer for question 1">
+  <div class="q-title">Q1. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>=AVERAGEIF(A1:A10, &quot;&lt;&gt;#N/A&quot;)</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The AVERAGEIF function allows you to specify a condition to exclude errors like #N/A when calculating the average.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 2">
+  <div class="q-title">Q2. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>&quot;Not Found&quot;</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The IFERROR function captures any error from the VLOOKUP function and returns &quot;Not Found&quot; instead of an error message.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 3">
+  <div class="q-title">Q3. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>COUNT</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The COUNT function specifically counts only the cells that contain numeric values, ignoring empty cells.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 4">
+  <div class="q-title">Q4. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>The count of rows where A1:A10 &gt; 10 and B1:B10 &lt; 5</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">SUMPRODUCT multiplies the arrays created by the conditions and sums the results, effectively counting the rows that meet both criteria.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 5">
+  <div class="q-title">Q5. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>Returns the value from A1:A10 corresponding to the position of Apple in B1:B10</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The MATCH function finds the position of &quot;Apple&quot; in B1:B10, and INDEX uses that position to return the corresponding value from A1:A10.</div>
+</section> with the loop of HTML below.
+        -->
+        <section class="answer-block" aria-label="Answer for question 1">
+  <div class="q-title">Q1. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>=AVERAGEIF(A1:A10, &quot;&lt;&gt;#N/A&quot;)</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The AVERAGEIF function allows you to specify a condition to exclude errors like #N/A when calculating the average.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 2">
+  <div class="q-title">Q2. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>&quot;Not Found&quot;</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The IFERROR function captures any error from the VLOOKUP function and returns &quot;Not Found&quot; instead of an error message.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 3">
+  <div class="q-title">Q3. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>COUNT</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The COUNT function specifically counts only the cells that contain numeric values, ignoring empty cells.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 4">
+  <div class="q-title">Q4. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>The count of rows where A1:A10 &gt; 10 and B1:B10 &lt; 5</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">SUMPRODUCT multiplies the arrays created by the conditions and sums the results, effectively counting the rows that meet both criteria.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 5">
+  <div class="q-title">Q5. <span class="marks">(1 marks)</span></div>
+  <div class="answer">Answer: <strong>Returns the value from A1:A10 corresponding to the position of Apple in B1:B10</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The MATCH function finds the position of &quot;Apple&quot; in B1:B10, and INDEX uses that position to return the corresponding value from A1:A10.</div>
+</section>
+
+        <!-- EXAMPLE TEMPLATE FOR BACKEND GENERATION:
+        <div class="answer-card">
+          <div class="ans-header">
+             <span class="q-badge">Q1</span>
+             <span class="correct-option">Ans: B</span>
+          </div>
+          <div class="explanation">
+             <strong>Solution:</strong>
+             Mitochondria is known as the powerhouse of the cell because it produces ATP.
+          </div>
+        </div>
+        -->
+        
+      </div>
+
+      <footer class="footer">
+        <div>Generated by <strong>AI Paper Generator</strong></div>
+        <div>Total Questions: 5</div>
+      </footer>
+    </div>
+  </div>
+
+<script>
+/* Simple Clean-up Script */
+(function(){
+  var logo = document.getElementById('logoImg');
+  if(logo && (logo.src.includes('None') || logo.src.trim() === '')) {
+    logo.style.display = 'none';
+  }
+  
+  var inst = document.getElementById('instName');
+  if(inst && (!inst.innerText || inst.innerText.trim()==="")) {
+    inst.innerText = "Examination Dept";
+  }
+})();
+</script>
+</body>
+</html>
