@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skill Course — Question Paper • QP-F9EB176F</title>
+<meta name="color-scheme" content="light dark">
+<style>
+/* =========================
+   PREMIUM DESKTOP-FIRST PAPER TEMPLATE
+   - Large readable typography on desktop
+   - Big question numbers (no overlap)
+   - Sticky right panel for QR/meta on wide screens
+   - Print-friendly rules
+   ========================= */
+
+:root{
+  --bg: #f3f6fb;
+  --paper: #ffffff;
+  --text: #0d1721;
+  --muted: #6b7280;
+  --accent: #0b66ff;
+  --surface: #f8fbff;
+  --border: #e6eefb;
+  --shadow: 0 18px 50px rgba(11,22,36,0.08);
+  --radius: 14px;
+
+  /* desktop sizes */
+  --page-max-width: 1200px;
+  --gutter: 48px;
+
+  /* question number sizes (desktop default) */
+  --num-size: 88px;
+  --num-font: 28px;
+
+  --q-font-size: 18px;
+  --q-line-height: 1.75;
+}
+
+/* Basic reset */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0;background:var(--bg);font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+.container{display:flex;justify-content:center;padding:48px 20px}
+
+/* Paper panel (main) */
+.sheet{
+  width:100%;
+  max-width:var(--page-max-width);
+  display:grid;
+  grid-template-columns: 1fr 320px; /* main + side (desktop) */
+  gap:32px;
+  background:var(--paper);
+  padding:36px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  align-items:start;
+  position:relative;
+}
+
+/* If small screen, collapse to single column */
+@media (max-width:1100px){
+  .sheet{grid-template-columns: 1fr; padding:28px}
+}
+
+/* Header (spans full width) */
+.header{
+  grid-column:1 / -1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:6px;
+}
+.header-left{display:flex;align-items:center;gap:18px}
+.logo{width:84px;height:84px;object-fit:contain;border-radius:12px;background:#fff;padding:10px;border:1px solid rgba(0,0,0,0.03)}
+.headline{line-height:1}
+.headline .inst{font-size:26px;font-weight:800}
+.headline .sub{color:var(--muted);font-size:14px;margin-top:4px}
+
+/* Meta box on header right */
+.meta-box{text-align:right}
+.meta-box .small{color:var(--muted);font-size:13px}
+
+/* Info badges row (spans content area) */
+.badge-row{
+  grid-column:1 / -1;
+  display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 10px 0
+}
+.badge{
+  background:linear-gradient(180deg,rgba(11,102,255,0.06),rgba(11,102,255,0.02));
+  padding:8px 12px;border-radius:999px;border:1px solid rgba(11,102,255,0.06);
+  color:var(--muted);font-size:13px;
+}
+
+/* Main content column */
+.content{padding-right:8px}
+
+/* Right sticky panel (QR + quick meta) */
+.side{
+  position:sticky;
+  top:36px;
+  align-self:start;
+  height:fit-content;
+}
+.side .panel{background:var(--surface);padding:16px;border-radius:12px;border:1px solid var(--border);margin-bottom:14px}
+.side .panel h4{margin:0 0 8px 0;font-size:14px}
+.side .qr{display:flex;justify-content:center;padding-top:6px}
+.side .qr img{width:180px;height:180px;object-fit:contain;border-radius:10px;background:#fff;padding:10px;border:1px solid rgba(0,0,0,0.03)}
+
+/* Instructions */
+.instructions{background:linear-gradient(180deg,#f8fbff,#ffffff);border-left:6px solid var(--accent);padding:14px;border-radius:10px;margin-bottom:22px;color:var(--muted)}
+
+/* Questions: each question as a card with left big number */
+.questions-list{display:flex;flex-direction:column;gap:22px}
+.question-card{
+  display:grid;
+  grid-template-columns: var(--num-size) 1fr;
+  gap:20px;
+  align-items:start;
+  padding:20px;border-radius:12px;
+  border:1px solid var(--border);
+  background:linear-gradient(180deg,#ffffff,#fbfdff);
+  position:relative;
+  overflow:visible;
+  box-shadow: 0 6px 22px rgba(9,30,66,0.03);
+}
+
+/* Number circle */
+.q-num{
+  width:var(--num-size);
+  height:var(--num-size);
+  min-width:var(--num-size);
+  min-height:var(--num-size);
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--accent), #0b5ff6);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:900;font-size:var(--num-font);
+  box-shadow:0 10px 30px rgba(11,102,255,0.12);
+  flex-shrink:0;
+}
+
+/* question content */
+.q-body{font-size:var(--q-font-size);line-height:var(--q-line-height)}
+.q-body .text{margin:0 0 8px 0}
+.q-body .marks{display:inline-block;padding:6px 10px;background:#eef6ff;border-radius:8px;color:var(--accent);font-weight:700;margin-top:8px;font-size:13px}
+
+/* options list */
+.options{margin-top:10px;padding-left:12px}
+.options li{margin:6px 0;padding:10px;border-radius:8px;background:#fbfdff;border:1px solid rgba(8,15,40,0.03);list-style:none;font-size:15px}
+
+/* question images */
+.q-image img{max-width:100%;border-radius:10px;margin-top:8px}
+
+/* footer (spans full width) */
+.footer{
+  grid-column:1 / -1;
+  display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:18px;border-top:1px dashed var(--border);
+  color:var(--muted);font-size:13px
+}
+
+/* RESPONSIVE behavior - scale down for tablet/mobile */
+@media (max-width:1300px){
+  :root{--num-size:72px;--num-font:24px;--q-font-size:17px}
+}
+@media (max-width:1000px){
+  :root{--num-size:60px;--num-font:20px;--q-font-size:16px}
+  .side{position:static}
+}
+@media (max-width:700px){
+  :root{--num-size:48px;--num-font:18px;--q-font-size:15px}
+  .sheet{padding:20px}
+  .logo{width:64px;height:64px}
+  .header{flex-direction:column;align-items:flex-start;gap:14px}
+  .meta-box{text-align:left}
+  .question-card{grid-template-columns: var(--num-size) 1fr;padding:16px}
+}
+@media (max-width:460px){
+  /* single column card layout for very small screens */
+  .question-card{grid-template-columns:1fr; grid-template-rows: var(--num-size) auto; gap:10px}
+  .q-num{justify-self:center; width:48px;height:48px;border-radius:10px;font-size:15px}
+  :root{--q-font-size:15px;--num-size:48px}
+}
+
+/* Print rules */
+@media print{
+  body,html{background:white}
+  .container{padding:0}
+  .sheet{box-shadow:none;border-radius:0;border:none;margin:0;padding:20mm;grid-template-columns:1fr}
+  .side{display:none}
+  .question-card{break-inside:avoid;padding:12px}
+  .q-num{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <main class="sheet" role="main" aria-label="Question paper QP-F9EB176F">
+    <!-- Header -->
+    <header class="header" role="banner">
+      <div class="header-left">
+        <img src="" alt="Skill Course logo" class="logo" onerror="this.style.display='none'">
+        <div class="headline">
+          <div class="inst">Skill Course</div>
+          <div class="sub">Computer Applications • Excel Formulas</div>
+        </div>
+      </div>
+
+      <div class="meta-box">
+        <div class="meta-box small">Paper ID: <strong>QP-F9EB176F</strong></div>
+        <div class="meta-box small">Date: <strong>01-12-2025</strong></div>
+      </div>
+    </header>
+
+    <!-- Badges (full width) -->
+    <div class="badge-row" aria-hidden="true">
+      <div class="badge">Class: <strong style="margin-left:8px">Advanced</strong></div>
+      <div class="badge">Difficulty: <strong style="margin-left:8px">Hard</strong></div>
+      <div class="badge">Marks/Q: <strong style="margin-left:8px">1</strong></div>
+      <div class="badge">Questions: <strong style="margin-left:8px">5</strong></div>
+    </div>
+
+    <!-- Main content + side -->
+    <section class="content" aria-label="Questions column">
+      <div class="instructions">
+        <strong>Instructions:</strong>
+        <ul style="margin:8px 0 0 18px;color:#223047">
+          <li>Read questions carefully. Marks are shown next to each question.</li>
+          <li>Write answers on separate sheet unless instructed to write below.</li>
+        </ul>
+      </div>
+
+      <div class="questions-list" id="questionsList">
+        <!-- Generator must inject <div class="question-card"> blocks (see template_helpers output) -->
+        <li class="question" id="q1" aria-label="Question 1">
+  <div class="q-num" aria-hidden="true">1</div>
+  <div class="q-text">Which of the following formulas will return the sum of all values in column A where the corresponding value in column B is &#x27;Yes&#x27;?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> =SUMIF(B:B, &#x27;Yes&#x27;, A:A)</li><li role="listitem"><strong>B.</strong> =SUMIF(A:A, &#x27;Yes&#x27;, B:B)</li><li role="listitem"><strong>C.</strong> =SUM(A:A, B:B)</li><li role="listitem"><strong>D.</strong> =SUMIFS(A:A, B:B, &#x27;Yes&#x27;)</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q2" aria-label="Question 2">
+  <div class="q-num" aria-hidden="true">2</div>
+  <div class="q-text">What does the formula =IFERROR(A1/B1, &#x27;Error&#x27;) return if B1 is 0?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> 0</li><li role="listitem"><strong>B.</strong> &#x27;Error&#x27;</li><li role="listitem"><strong>C.</strong> Infinity</li><li role="listitem"><strong>D.</strong> A1/B1</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q3" aria-label="Question 3">
+  <div class="q-num" aria-hidden="true">3</div>
+  <div class="q-text">In Excel, which function would you use to find the average of a range while ignoring any text entries?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> =AVERAGE(A1:A10)</li><li role="listitem"><strong>B.</strong> =AVERAGEIF(A1:A10, &#x27;&gt;=0&#x27;)</li><li role="listitem"><strong>C.</strong> =AVERAGEIFS(A1:A10, A1:A10, &#x27;&gt;=0&#x27;)</li><li role="listitem"><strong>D.</strong> =AVERAGEA(A1:A10)</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q4" aria-label="Question 4">
+  <div class="q-num" aria-hidden="true">4</div>
+  <div class="q-text">Which of the following formulas will correctly concatenate the values in cells A1 and B1 with a space in between?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> =A1 &amp; B1</li><li role="listitem"><strong>B.</strong> =CONCATENATE(A1, &#x27; &#x27;, B1)</li><li role="listitem"><strong>C.</strong> =A1 + &#x27; &#x27; + B1</li><li role="listitem"><strong>D.</strong> =TEXTJOIN(&#x27; &#x27;, TRUE, A1, B1)</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q5" aria-label="Question 5">
+  <div class="q-num" aria-hidden="true">5</div>
+  <div class="q-text">What will the formula =VLOOKUP(&#x27;Apple&#x27;, A1:B10, 2, FALSE) return if &#x27;Apple&#x27; is not found in the first column of the range?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> #N/A</li><li role="listitem"><strong>B.</strong> 0</li><li role="listitem"><strong>C.</strong> Apple</li><li role="listitem"><strong>D.</strong> FALSE</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+      </div>
+    </section>
+
+    <aside class="side" aria-label="Right panel with QR and quick info">
+      <div class="panel">
+        <h4>Quick Info</h4>
+        <div style="color:var(--muted);font-size:14px">Paper ID: <strong>QP-F9EB176F</strong></div>
+        <div style="color:var(--muted);margin-top:6px">Date: <strong>01-12-2025</strong></div>
+      </div>
+
+      <div class="panel">
+        <h4>Scan to Open Online</h4>
+        <div class="qr">
+          <img src="" alt="QR to open paper online" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <div class="panel" style="text-align:center">
+        <div style="font-size:13px;color:var(--muted)">Generated by</div>
+        <div style="font-weight:800;margin-top:6px">Skill Course</div>
+      </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div>Generated by <strong>AI Paper Generator</strong></div>
+      <div class="meta small">Keep this for records • Do not redistribute</div>
+    </footer>
+  </main>
+</div>
+
+<!-- Small script: if logo empty hide element; if QR empty hide box -->
+<script>
+(function(){
+  try{
+    var logo = document.querySelector('.logo');
+    if(logo && (!logo.src || logo.src.trim()==="" || logo.src==='')) logo.style.display='none';
+    var qr = document.querySelector('.qr img');
+    if(qr && (!qr.src || qr.src.trim()==="" || qr.src==='')) {
+      var panel = qr.closest('.panel'); if(panel) panel.style.display='none';
+      qr.style.display='none';
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
