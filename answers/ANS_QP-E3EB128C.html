@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Key — QP-E3EB128C</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            /* Colors - Professional Green Theme */
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #d1fae5;
+            --secondary: #3b82f6;
+            --accent: #8b5cf6;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.15);
+            --shadow-xl: 0 20px 40px -10px rgba(0,0,0,0.2);
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-full: 9999px;
+            
+            /* Typography */
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            /* Layout */
+            --max-width: 1100px;
+        }
+        
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            color: var(--gray-800);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 15px;
+            position: relative;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        /* ===== ANSWER SHEET ===== */
+        .answer-sheet {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            padding: 25px 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+        }
+        
+        /* Watermark */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 60px;
+            font-weight: 900;
+            color: var(--primary-light);
+            opacity: 0.1;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            z-index: 0;
+        }
+        
+        /* Pattern */
+        .pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 1px 1px, var(--gray-200) 1px, transparent 0);
+            background-size: 20px 20px;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* ===== HEADER ===== */
+        .answer-header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+        }
+        
+        .logo-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: white;
+            padding: 5px;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .logo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .logo-info h1 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 5px;
+            word-wrap: break-word;
+        }
+        
+        .logo-info .subtitle {
+            font-size: 13px;
+            color: var(--gray-600);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        /* Header Meta and QR */
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .header-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .meta-badge {
+            background: var(--gray-50);
+            padding: 10px 8px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+            text-align: center;
+        }
+        
+        .meta-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray-500);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .meta-value {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray-800);
+            font-family: var(--font-mono);
+            word-break: break-all;
+        }
+        
+        /* QR Code Section */
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .qr-container {
+            width: 90px;
+            height: 90px;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 6px;
+            border: 1px solid var(--gray-300);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .qr-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .qr-label {
+            font-size: 10px;
+            color: var(--gray-600);
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* ===== TITLE SECTION ===== */
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main-title {
+            font-size: 26px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .main-subtitle {
+            font-size: 15px;
+            color: var(--gray-600);
+            margin-bottom: 20px;
+        }
+        
+        /* Stats Cards */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 18px 15px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:active {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-light);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 18px;
+            color: var(--primary);
+        }
+        
+        .stat-value {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        /* ===== ANSWERS GRID ===== */
+        .answers-section {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .answers-header {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gray-200);
+            text-align: center;
+        }
+        
+        .answers-header h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--gray-900);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .answers-count {
+            background: var(--primary);
+            color: white;
+            padding: 6px 15px;
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 700;
+            align-self: center;
+        }
+        
+        /* Answers Grid */
+        .answers-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+        
+        /* Answer Card */
+        .answer-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            border: 2px solid var(--gray-200);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .answer-card:active {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .answer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+        }
+        
+        /* Card Header */
+        .card-header {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 18px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .question-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .question-number {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 16px;
+            box-shadow: var(--shadow-md);
+            flex-shrink: 0;
+        }
+        
+        .question-type {
+            background: var(--gray-100);
+            padding: 5px 10px;
+            border-radius: var(--radius-full);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gray-700);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Answer Section */
+        .answer-section {
+            background: var(--primary-light);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            margin-bottom: 18px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .answer-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-600);
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .answer-label i {
+            color: var(--primary);
+        }
+        
+        .answer-content {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gray-900);
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+        
+        .answer-option {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        
+        /* Explanation Section */
+        .explanation-section {
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .explanation-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-600);
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .explanation-label i {
+            color: var(--primary);
+        }
+        
+        .explanation-content {
+            font-size: 14px;
+            color: var(--gray-700);
+            line-height: 1.6;
+            text-align: justify;
+        }
+        
+        /* Marks Section */
+        .marks-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--gray-300);
+        }
+        
+        .marks-badge {
+            background: var(--gray-100);
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gray-700);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .marks-value {
+            color: var(--primary);
+            font-weight: 800;
+        }
+        
+        .difficulty-badge {
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            align-self: flex-start;
+        }
+        
+        .difficulty-badge.easy {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .difficulty-badge.medium {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+        
+        .difficulty-badge.hard {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+        
+        /* ===== FOOTER ===== */
+        .answer-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed var(--gray-300);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-info h4 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+        
+        .footer-info p {
+            font-size: 13px;
+            color: var(--gray-600);
+            margin-bottom: 15px;
+        }
+        
+        .accuracy-badge {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* ===== ACTION BUTTONS ===== */
+        .print-btn {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            font-family: var(--font-sans);
+            font-size: 14px;
+        }
+        
+        .print-btn:active {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 70px;
+            right: 15px;
+            background: var(--gray-800);
+            color: white;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+        
+        .scroll-top-btn:active {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        /* Tablet */
+        @media (min-width: 768px) {
+            body {
+                padding: 25px 20px;
+            }
+            
+            .answer-sheet {
+                padding: 30px;
+            }
+            
+            .watermark {
+                font-size: 80px;
+                letter-spacing: 6px;
+            }
+            
+            .answer-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            
+            .logo-section {
+                flex-direction: row;
+                text-align: left;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .header-right {
+                align-items: flex-end;
+                width: auto;
+            }
+            
+            .header-meta {
+                width: auto;
+            }
+            
+            .answers-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+            }
+            
+            .answers-count {
+                align-self: center;
+            }
+            
+            .answers-grid {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                gap: 20px;
+            }
+            
+            .main-title {
+                font-size: 32px;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 15px;
+            }
+            
+            .stat-card {
+                padding: 20px;
+            }
+            
+            .card-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .marks-section {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .difficulty-badge {
+                align-self: center;
+            }
+            
+            .print-btn, .scroll-top-btn {
+                font-size: 15px;
+                padding: 12px 24px;
+            }
+            
+            .scroll-top-btn {
+                width: 45px;
+                height: 45px;
+                bottom: 75px;
+            }
+        }
+        
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .answer-sheet {
+                padding: 40px 50px;
+            }
+            
+            .watermark {
+                font-size: 100px;
+                letter-spacing: 8px;
+            }
+            
+            .main-title {
+                font-size: 36px;
+            }
+            
+            .answers-grid {
+                grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            }
+            
+            .print-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: var(--shadow-xl);
+            }
+            
+            .scroll-top-btn:hover {
+                opacity: 1;
+                transform: translateY(-3px);
+            }
+            
+            .stat-card:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .answer-card:hover {
+                border-color: var(--primary);
+                transform: translateY(-3px);
+                box-shadow: var(--shadow-lg);
+            }
+        }
+        
+        /* Small Mobile */
+        @media (max-width: 360px) {
+            .logo-image {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo-info h1 {
+                font-size: 18px;
+            }
+            
+            .header-meta {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            
+            .qr-container {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .print-btn, .scroll-top-btn {
+                padding: 10px 16px;
+                font-size: 13px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .scroll-top-btn {
+                bottom: 65px;
+                right: 10px;
+            }
+        }
+        
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .answer-sheet {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                padding: 20mm;
+                margin: 0;
+            }
+            
+            .watermark, .pattern {
+                display: none;
+            }
+            
+            .answer-card {
+                break-inside: avoid;
+                border: 1px solid #ddd;
+                box-shadow: none;
+            }
+            
+            .answer-card:hover {
+                transform: none;
+                border-color: #ddd;
+            }
+            
+            .print-btn, .scroll-top-btn {
+                display: none;
+            }
+            
+            .qr-section {
+                display: none;
+            }
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .answer-card {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="answer-sheet">
+            <!-- Background Elements -->
+            <div class="watermark">ANSWER KEY</div>
+            <div class="pattern"></div>
+            
+            <!-- Header -->
+            <header class="answer-header">
+                <div class="logo-section">
+                    <div class="logo-image">
+                        <img src="https://raw.githubusercontent.com/DataAnalystSachin/Papers-Generator/fdbbd34b037fd774e20697ab42d1f6fea69fd4d8/my_logo.png" 
+                             alt="Institute Logo"
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAiIGhlaWdodD0iNzAiIHZpZXdCb3g9IjAgMCA3MCA3MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIzNSIgY3k9IjM1IiByPSIzNSIgZmlsbD0iIzEwYjk4MSIvPjx0ZXh0IHg9IjM1IiB5PSI0MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iMC4zZW0iPkFOU1dFUjwvdGV4dD48L3N2Zz4='">
+                    </div>
+                    <div class="logo-info">
+                        <h1>Skill Course</h1>
+                        <div class="subtitle">
+                            <i class="fas fa-key"></i>
+                            <span>Answer Key • Physics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="header-meta">
+                        <div class="meta-badge">
+                            <div class="meta-label">Paper ID</div>
+                            <div class="meta-value">QP-E3EB128C</div>
+                        </div>
+                        <div class="meta-badge">
+                            <div class="meta-label">Date</div>
+                            <div class="meta-value">04-12-2025</div>
+                        </div>
+                    </div>
+                    
+                    <!-- QR Code Section -->
+                    <div class="qr-section">
+                        <div class="qr-container">
+                            <img src="{{QR_URL}}" alt="Answer Key QR Code">
+                        </div>
+                        <div class="qr-label">SCAN FOR ONLINE VERSION</div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Title Section -->
+            <section class="title-section">
+                <h1 class="main-title">Answer Key & Solutions</h1>
+                <p class="main-subtitle">Topic: Mechanics • Difficulty: Hard</p>
+                
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="stat-value">4</div>
+                        <div class="stat-label">Total Questions</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">Marks Per Question</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-value">90 Min</div>
+                        <div class="stat-label">Duration</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-value">Hard</div>
+                        <div class="stat-label">Difficulty Level</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Answers Section -->
+            <section class="answers-section">
+                <div class="answers-header">
+                    <h2>
+                        <i class="fas fa-check-circle"></i>
+                        Detailed Solutions
+                    </h2>
+                    <div class="answers-count">
+                        4 Answers
+                    </div>
+                </div>
+                
+                <div class="answers-grid" id="answersList">
+                    <section class="answer-block" aria-label="Answer for question 1">
+  <div class="q-title">Q1. <span class="marks">(2 marks)</span></div>
+  <div class="answer">Answer: <strong>19.8 मीटर/सेकंड</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">गति की गणना करने के लिए, हम स्वतंत्र रूप से गिरने वाले वस्तु के लिए गति का सूत्र v = √(2gh) का उपयोग करते हैं, जहाँ g = 9.8 मीटर/सेकंड² और h = 20 मीटर।</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 2">
+  <div class="q-title">Q2. <span class="marks">(2 marks)</span></div>
+  <div class="answer">Answer: <strong>2 मीटर/सेकंड²</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">न्यूटन का दूसरा नियम कहता है कि F = ma, जहाँ F बल है, m द्रव्यमान है और a त्वरण है। यहाँ, a = F/m = 10N/5kg = 2 मीटर/सेकंड²।</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 3">
+  <div class="q-title">Q3. <span class="marks">(2 marks)</span></div>
+  <div class="answer">Answer: <strong>150 मीटर</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">दूरी की गणना करने के लिए, हम सूत्र d = vt का उपयोग करते हैं। यहाँ, v = 30 मीटर/सेकंड और t = 5 सेकंड। इसलिए, d = 30 * 5 = 150 मीटर।</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 4">
+  <div class="q-title">Q4. <span class="marks">(2 marks)</span></div>
+  <div class="answer">Answer: <strong>असत्य</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">बल हमेशा वस्तु की गति को बढ़ाता नहीं है। बल की दिशा और वस्तु की गति की दिशा के अनुसार, बल वस्तु की गति को कम भी कर सकता है।</div>
+</section>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="answer-footer">
+                <div class="footer-info">
+                    <h4>Generated by AI Paper Generator</h4>
+                    <p>Comprehensive • Accurate • Educational</p>
+                    <div class="accuracy-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% Verified Solutions</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i>
+        <span>Print Answer Key</span>
+    </button>
+
+    <button class="scroll-top-btn" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Enhanced Clean-up and Features
+        (function() {
+            // Add animations to answer cards
+            const answerCards = document.querySelectorAll('.answer-card');
+            answerCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Handle logo error
+            const logoImg = document.querySelector('.logo-image img');
+            if (logoImg) {
+                logoImg.onerror = function() {
+                    this.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.style.cssText = `
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(135deg, var(--primary), var(--secondary));
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        font-weight: 600;
+                        text-align: center;
+                        padding: 10px;
+                        font-size: 12px;
+                        line-height: 1.2;
+                    `;
+                    fallback.textContent = 'Skill Course'.substring(0, 3);
+                    this.parentNode.appendChild(fallback);
+                };
+            }
+            
+            // Handle QR code error
+            const qrImg = document.querySelector('.qr-container img');
+            if (qrImg) {
+                qrImg.onerror = function() {
+                    this.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.style.cssText = `
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        color: var(--primary);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        text-align: center;
+                        padding: 10px;
+                        font-size: 12px;
+                        line-height: 1.2;
+                    `;
+                    fallback.textContent = 'QR Code';
+                    this.parentNode.appendChild(fallback);
+                };
+            }
+            
+            // Add copy functionality for answers with touch support
+            answerCards.forEach(card => {
+                const answerContent = card.querySelector('.answer-content');
+                if (answerContent) {
+                    answerContent.style.cursor = 'pointer';
+                    answerContent.title = 'Click to copy answer';
+                    answerContent.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                    });
+                    answerContent.addEventListener('touchend', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                    answerContent.onclick = function() {
+                        const text = this.textContent;
+                        if (navigator.clipboard) {
+                            navigator.clipboard.writeText(text).then(() => {
+                                const original = this.innerHTML;
+                                this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                                this.style.color = 'var(--primary)';
+                                
+                                setTimeout(() => {
+                                    this.innerHTML = original;
+                                    this.style.color = '';
+                                }, 1500);
+                            });
+                        }
+                    };
+                }
+            });
+            
+            // Scroll to top functionality
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            scrollTopBtn.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.95)';
+            });
+            scrollTopBtn.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Show/hide scroll button
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.style.display = 'flex';
+                } else {
+                    scrollTopBtn.style.display = 'none';
+                }
+            });
+            
+            // Improve touch experience for stat cards
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                card.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+            
+            // Improve touch experience for answer cards
+            answerCards.forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-2px) scale(0.99)';
+                });
+                card.addEventListener('touchend', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Improve touch experience for print button
+            const printButton = document.querySelector('.print-btn');
+            if (printButton) {
+                printButton.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-3px) scale(0.98)';
+                });
+                printButton.addEventListener('touchend', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            }
+        })();
+        
+        // Handle orientation change
+        window.addEventListener('orientationchange', function() {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 100);
+        });
+    </script>
+</body>
+</html>
