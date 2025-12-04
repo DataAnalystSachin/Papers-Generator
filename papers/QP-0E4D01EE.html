@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Paper — QP-0E4D01EE</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            /* Colors - Professional Blue Theme */
+            --primary: #2d6ae3;
+            --primary-dark: #1a56d4;
+            --primary-light: #e8f1ff;
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.15);
+            --shadow-xl: 0 20px 40px -10px rgba(0,0,0,0.2);
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-full: 9999px;
+            
+            /* Typography */
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            /* Layout */
+            --max-width: 1100px;
+            --header-height: 80px;
+        }
+        
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            background: linear-gradient(135deg, #f6f9ff 0%, #edf2ff 100%);
+            color: var(--gray-800);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(45, 106, 227, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        /* ===== PAPER SHEET ===== */
+        .paper-sheet {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            padding: 40px 50px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            margin-bottom: 40px;
+        }
+        
+        /* Watermark */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 120px;
+            font-weight: 900;
+            color: var(--gray-100);
+            opacity: 0.15;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            z-index: 0;
+        }
+        
+        /* Security Pattern */
+        .security-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 1px 1px, var(--gray-200) 1px, transparent 0);
+            background-size: 40px 40px;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* ===== HEADER ===== */
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .institute-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            box-shadow: var(--shadow-md);
+            border: 3px solid var(--white);
+            overflow: hidden;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .institute-details h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+        
+        .institute-details .subject {
+            font-size: 16px;
+            color: var(--gray-600);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .subject i {
+            color: var(--primary);
+        }
+        
+        .paper-meta {
+            text-align: right;
+        }
+        
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .meta-item {
+            text-align: center;
+            padding: 8px 15px;
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray-500);
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .meta-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gray-800);
+            font-family: var(--font-mono);
+        }
+        
+        /* ===== PAPER TITLE ===== */
+        .paper-title-section {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .paper-title {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .paper-subtitle {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 20px;
+        }
+        
+        /* Badges */
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .badge {
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .badge.difficulty {
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            color: white;
+        }
+        
+        .badge.questions {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+        
+        .badge.marks {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+        }
+        
+        .badge.time {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: white;
+        }
+        
+        /* ===== INSTRUCTIONS ===== */
+        .instructions-section {
+            background: linear-gradient(135deg, var(--primary-light), #e0f2fe);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            margin-bottom: 35px;
+            border-left: 5px solid var(--primary);
+            position: relative;
+            z-index: 1;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .instructions-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .instructions-header i {
+            font-size: 24px;
+            color: var(--primary);
+        }
+        
+        .instructions-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-800);
+        }
+        
+        .instructions-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+        
+        .instructions-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--gray-700);
+        }
+        
+        .instructions-list li i {
+            color: var(--primary);
+            font-size: 12px;
+        }
+        
+        /* ===== QUESTIONS SECTION ===== */
+        .questions-section {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .questions-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .questions-header h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--gray-900);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .questions-count {
+            background: var(--primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 700;
+        }
+        
+        /* Questions List */
+        .questions-list {
+            list-style: none;
+        }
+        
+        .question-item {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 2px solid var(--gray-200);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .question-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .question-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+        }
+        
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .question-number {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .q-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .question-meta {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .question-type {
+            background: var(--gray-100);
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-700);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .question-marks {
+            background: var(--primary-light);
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .question-content {
+            margin-bottom: 20px;
+        }
+        
+        .question-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--gray-800);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .question-image {
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .question-image img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+        }
+        
+        /* Options Grid */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .option-item {
+            background: var(--gray-50);
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            padding: 15px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .option-item:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            transform: translateX(5px);
+        }
+        
+        .option-letter {
+            width: 36px;
+            height: 36px;
+            background: var(--gray-300);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--gray-700);
+            flex-shrink: 0;
+        }
+        
+        .option-text {
+            flex: 1;
+            font-size: 15px;
+            color: var(--gray-700);
+        }
+        
+        /* ===== FOOTER ===== */
+        .paper-footer {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px dashed var(--gray-300);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .generator-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 5px;
+        }
+        
+        .generator-info p {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+        
+        .qr-section {
+            text-align: center;
+        }
+        
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 10px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            margin-bottom: 8px;
+        }
+        
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .qr-label {
+            font-size: 11px;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .paper-sheet {
+                padding: 25px;
+            }
+            
+            .paper-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .institute-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .paper-meta {
+                width: 100%;
+            }
+            
+            .meta-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .paper-title {
+                font-size: 24px;
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .paper-footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .paper-sheet {
+                padding: 20px;
+            }
+            
+            .meta-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .question-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .question-meta {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .badges-container {
+                justify-content: flex-start;
+            }
+        }
+        
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .paper-sheet {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                padding: 20mm;
+                margin: 0;
+            }
+            
+            .watermark, .security-pattern {
+                display: none;
+            }
+            
+            .question-item {
+                break-inside: avoid;
+                border: 1px solid #ddd;
+                box-shadow: none;
+            }
+            
+            .question-item:hover {
+                transform: none;
+                border-color: #ddd;
+            }
+            
+            .option-item:hover {
+                transform: none;
+                border-color: #ddd;
+                background: #f5f5f5;
+            }
+            
+            .qr-section {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="paper-sheet">
+            <!-- Background Elements -->
+            <div class="watermark" id="watermarkText">sachin jangir</div>
+            <div class="security-pattern"></div>
+            
+            <!-- Header -->
+            <header class="paper-header">
+                <div class="institute-info">
+                    <div class="logo-container">
+                       
+                    </div>
+                    <div class="institute-details">
+                        <h1 id="instName">sachin jangir</h1>
+                        <div class="subject">
+                            <i class="fas fa-book"></i>
+                            <span id="subjectMeta">Computer Science</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paper-meta">
+                    <div class="meta-grid">
+                        <div class="meta-item">
+                            <div class="meta-label">Paper ID</div>
+                            <div class="meta-value">QP-0E4D01EE</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Date</div>
+                            <div class="meta-value">04-12-2025</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Class</div>
+                            <div class="meta-value">advanced</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Duration</div>
+                            <div class="meta-value">90 Min</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Title Section -->
+            <section class="paper-title-section">
+                <h1 class="paper-title" id="topicTitle">Programming Basics</h1>
+                <p class="paper-subtitle">Examination Question Paper</p>
+                
+                <div class="badges-container">
+                    <div class="badge difficulty">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Difficulty: Hard</span>
+                    </div>
+                    <div class="badge questions">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Questions: 5</span>
+                    </div>
+                    <div class="badge marks">
+                        <i class="fas fa-star"></i>
+                        <span>Marks/Q: 1</span>
+                    </div>
+                    <div class="badge time">
+                        <i class="fas fa-clock"></i>
+                        <span>Time: 90 Min</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Instructions -->
+            <section class="instructions-section">
+                <div class="instructions-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>Instructions to Candidates</h3>
+                </div>
+                <ul class="instructions-list">
+                    <li><i class="fas fa-check-circle"></i> Check that this paper contains all questions</li>
+                    <li><i class="fas fa-check-circle"></i> Write your Roll Number on the answer sheet</li>
+                    <li><i class="fas fa-check-circle"></i> Attempt all questions in sequence</li>
+                    <li><i class="fas fa-check-circle"></i> Use black/blue pen only for writing</li>
+                    <li><i class="fas fa-check-circle"></i> Calculators are not allowed</li>
+                    <li><i class="fas fa-check-circle"></i> Mobile phones must be switched off</li>
+                </ul>
+            </section>
+            
+            <!-- Questions Section -->
+            <section class="questions-section">
+                <div class="questions-header">
+                    <h2>
+                        <i class="fas fa-file-alt"></i>
+                        Questions
+                    </h2>
+                    <div class="questions-count">
+                        Total: 5 Questions
+                    </div>
+                </div>
+                
+                <ol class="questions-list" id="questionsList">
+                    <li class="question" id="q1" aria-label="Question 1">
+  <div class="q-num" aria-hidden="true">1</div>
+  <div class="q-text">Which of the following data structures uses LIFO (Last In, First Out) principle?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> Queue</li><li role="listitem"><strong>B.</strong> Stack</li><li role="listitem"><strong>C.</strong> Array</li><li role="listitem"><strong>D.</strong> Linked List</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q2" aria-label="Question 2">
+  <div class="q-num" aria-hidden="true">2</div>
+  <div class="q-text">What will be the output of the following code snippet: &#x27;print(2 ** 3 ** 2)&#x27;?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> 64</li><li role="listitem"><strong>B.</strong> 8</li><li role="listitem"><strong>C.</strong> 9</li><li role="listitem"><strong>D.</strong> 16</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q3" aria-label="Question 3">
+  <div class="q-num" aria-hidden="true">3</div>
+  <div class="q-text">In Python, which of the following is used to define a block of code that will execute when an exception occurs?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> try</li><li role="listitem"><strong>B.</strong> catch</li><li role="listitem"><strong>C.</strong> finally</li><li role="listitem"><strong>D.</strong> except</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q4" aria-label="Question 4">
+  <div class="q-num" aria-hidden="true">4</div>
+  <div class="q-text">What is the time complexity of accessing an element in a hash table?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> O(n)</li><li role="listitem"><strong>B.</strong> O(log n)</li><li role="listitem"><strong>C.</strong> O(1)</li><li role="listitem"><strong>D.</strong> O(n^2)</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+
+<li class="question" id="q5" aria-label="Question 5">
+  <div class="q-num" aria-hidden="true">5</div>
+  <div class="q-text">Which of the following sorting algorithms has the best average-case time complexity?</div>
+  
+  <ul class="options" role="list"><li role="listitem"><strong>A.</strong> Bubble Sort</li><li role="listitem"><strong>B.</strong> Insertion Sort</li><li role="listitem"><strong>C.</strong> Quick Sort</li><li role="listitem"><strong>D.</strong> Selection Sort</li></ul>
+  
+  <div class="marks" aria-hidden="true">1 marks</div>
+</li>
+                </ol>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="paper-footer">
+                <div class="generator-info">
+                    <h4>Generated by AI Paper Generator</h4>
+                    <p>Professional • Accurate • Reliable</p>
+                </div>
+                
+                <div class="qr-section">
+                    <div class="qr-code">
+                       
+                    </div>
+                    <div class="qr-label">Scan for Digital Copy</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced Clean-up Script
+        (function() {
+            // Handle missing logo
+            const logoImg = document.getElementById('logoImg');
+            if (logoImg && (!logoImg.src || logoImg.src.includes('None'))) {
+                logoImg.parentElement.innerHTML = '<i class="fas fa-university"></i>';
+            }
+            
+            // Handle default institute name
+            const instName = document.getElementById('instName');
+            if (instName && (!instName.textContent.trim() || instName.textContent.includes('{{'))) {
+                instName.textContent = "Examination Board";
+                document.getElementById('watermarkText').textContent = "EXAMINATION";
+            }
+            
+            // Handle missing QR code
+            const qrImg = document.getElementById('qrImg');
+            if (qrImg && (!qrImg.src || qrImg.src.includes('None'))) {
+                qrImg.parentElement.innerHTML = '<i class="fas fa-qrcode"></i>';
+            }
+            
+            // Add subtle animations
+            const questionItems = document.querySelectorAll('.question-item');
+            questionItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+                item.classList.add('fade-in');
+            });
+            
+            // Print button functionality
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = '<i class="fas fa-print"></i> Print Paper';
+            printBtn.className = 'print-btn';
+            printBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--primary), var(--accent));
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 25px;
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s;
+            `;
+            
+            printBtn.onclick = () => window.print();
+            printBtn.onmouseover = () => {
+                printBtn.style.transform = 'translateY(-3px)';
+                printBtn.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
+            };
+            printBtn.onmouseout = () => {
+                printBtn.style.transform = 'translateY(0)';
+                printBtn.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+            };
+            
+            document.body.appendChild(printBtn);
+        })();
+    </script>
+</body>
+</html>
