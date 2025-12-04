@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - Question Paper - QP-BE875BB1</title>
+    
+    <!-- Professional Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+
+        /* ===== PAPER CONTAINER ===== */
+        .paper-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Watermark Background */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 120px;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.03);
+            z-index: 0;
+            white-space: nowrap;
+            user-select: none;
+            pointer-events: none;
+            font-family: 'Merriweather', serif;
+        }
+
+        /* Security Pattern */
+        .security-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, transparent 79px, rgba(0, 0, 0, 0.02) 79px),
+                linear-gradient(#f8f9fa 1px, transparent 1px);
+            background-size: 80px 40px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== HEADER SECTION ===== */
+        .paper-header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            z-index: 1;
+            border-bottom: 4px solid #e74c3c;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .institute-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .institute-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .institute-info {
+            text-align: center;
+            flex: 1;
+            margin: 0 30px;
+        }
+
+        .institute-name {
+            font-family: 'Merriweather', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .institute-tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .paper-id-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-width: 200px;
+        }
+
+        .paper-id-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .paper-id-value {
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .header-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .subject-info {
+            flex: 1;
+        }
+
+        .subject-name {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .topic-name {
+            font-size: 18px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .exam-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            min-width: 300px;
+        }
+
+        .meta-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 3px;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .paper-content {
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+            background: white;
+        }
+
+        /* Paper Title */
+        .paper-title-section {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .paper-title {
+            font-family: 'Merriweather', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .paper-subtitle {
+            font-size: 16px;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        /* Marks Information Banner */
+        .marks-banner {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+        }
+
+        .marks-banner-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .marks-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .marks-item-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .marks-item-value {
+            font-size: 28px;
+            font-weight: 700;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        /* Instructions Section */
+        .instructions-section {
+            background: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 35px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .instructions-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .instructions-icon {
+            width: 40px;
+            height: 40px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .instructions-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .instructions-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 12px;
+        }
+
+        .instruction-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 0;
+        }
+
+        .instruction-number {
+            width: 24px;
+            height: 24px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .instruction-text {
+            flex: 1;
+            font-size: 15px;
+            color: #34495e;
+            line-height: 1.5;
+        }
+
+        /* ===== QUESTIONS SECTION ===== */
+        .questions-section {
+            margin-top: 40px;
+        }
+
+        .questions-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .questions-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .questions-subtitle {
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+
+        /* Questions List */
+        .questions-list {
+            counter-reset: question-counter;
+        }
+
+        .question-item {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .question-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-color: #3498db;
+        }
+
+        /* Question Header (Number and Type) */
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .question-number {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .question-type-badge {
+            background: #ecf0f1;
+            color: #34495e;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Question Content */
+        .question-content {
+            margin-bottom: 20px;
+        }
+
+        .question-text {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* Question Image */
+        .question-image {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .question-image img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Options for MCQ */
+        .options-container {
+            margin-top: 20px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .option-item {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 15px;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .option-item:hover {
+            background: #e3f2fd;
+            border-color: #3498db;
+            transform: translateX(5px);
+        }
+
+        .option-letter {
+            width: 32px;
+            height: 32px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .option-text {
+            flex: 1;
+            font-size: 15px;
+            color: #34495e;
+            line-height: 1.5;
+        }
+
+        /* Hint Section */
+        .hint-section {
+            background: #fffde7;
+            border-left: 3px solid #f1c40f;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            display: none; /* Hidden by default */
+        }
+
+        .hint-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #f39c12;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .hint-text {
+            font-size: 14px;
+            color: #7d6608;
+            font-style: italic;
+        }
+
+        /* ===== FOOTER ===== */
+        .paper-footer {
+            background: #f8f9fa;
+            padding: 25px 40px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            flex: 1;
+        }
+
+        .generated-by {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .generator-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .footer-right {
+            text-align: center;
+        }
+
+        .qr-container {
+            text-align: center;
+        }
+
+        .qr-code {
+            width: 80px;
+            height: 80px;
+            background: white;
+            padding: 5px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .qr-label {
+            font-size: 11px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+            }
+            
+            .paper-header {
+                padding: 20px;
+            }
+            
+            .header-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .paper-id-box {
+                width: 100%;
+            }
+            
+            .header-bottom {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .exam-meta {
+                width: 100%;
+            }
+            
+            .paper-content {
+                padding: 20px;
+            }
+            
+            .paper-title {
+                font-size: 24px;
+            }
+            
+            .marks-banner-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .marks-item {
+                min-width: 100%;
+            }
+            
+            .paper-footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                font-size: 14px;
+            }
+            
+            .paper-container {
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+            
+            .watermark, .security-pattern {
+                display: none;
+            }
+            
+            .paper-header {
+                background: white !important;
+                color: black !important;
+                border-bottom: 2px solid black;
+            }
+            
+            .institute-logo {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .paper-id-box {
+                background: white !important;
+                color: black !important;
+                border: 1px solid #ddd;
+            }
+            
+            .marks-banner {
+                background: white !important;
+                color: black !important;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .question-item {
+                border: 1px solid #ddd;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+            
+            .option-item:hover {
+                transform: none;
+                background: #f8f9fa;
+            }
+            
+            .paper-footer {
+                background: white;
+                border-top: 1px solid #ddd;
+            }
+            
+            .qr-container {
+                display: none;
+            }
+            
+            .question-image img {
+                max-height: 200px;
+            }
+        }
+
+        /* ===== ADDITIONAL UTILITIES ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="paper-container">
+        <!-- Background Elements -->
+        <div class="watermark">sachin jangir</div>
+        <div class="security-pattern"></div>
+        
+        <!-- Header Section -->
+        <header class="paper-header">
+            <div class="header-top">
+                <!-- Institute Logo -->
+                <div class="institute-logo">
+                    <img src="file:///C:/Users/Administrator/Desktop/AI-Paper-Generator/my_logo.jpg" 
+                         alt="Institute Logo" 
+                         id="instituteLogo">
+                </div>
+                
+                <!-- Institute Information -->
+                <div class="institute-info">
+                    <h1 class="institute-name">sachin jangir</h1>
+                    <p class="institute-tagline">Excellence in Education</p>
+                </div>
+                
+                <!-- Paper ID Box -->
+                <div class="paper-id-box">
+                    <div class="paper-id-label">Question Paper ID</div>
+                    <div class="paper-id-value">QP-BE875BB1</div>
+                </div>
+            </div>
+            
+            <div class="header-bottom">
+                <!-- Subject Information -->
+                <div class="subject-info">
+                    <h2 class="subject-name">History</h2>
+                    <h3 class="topic-name">World Wars</h3>
+                </div>
+                
+                <!-- Exam Metadata -->
+                <div class="exam-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Class</div>
+                        <div class="meta-value">10</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Date</div>
+                        <div class="meta-value">04-12-2025</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Time</div>
+                        <div class="meta-value">90 Minutes</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Difficulty</div>
+                        <div class="meta-value">Hard</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="paper-content">
+            <!-- Paper Title -->
+            <section class="paper-title-section">
+                <h1 class="paper-title">Term Examination Question Paper</h1>
+                <p class="paper-subtitle">Academic Session 2024-2025</p>
+            </section>
+            
+            <!-- Marks Information Banner -->
+            <section class="marks-banner">
+                <div class="marks-banner-content">
+                    <div class="marks-item">
+                        <div class="marks-item-label">Total Questions</div>
+                        <div class="marks-item-value">5</div>
+                    </div>
+                    <div class="marks-item">
+                        <div class="marks-item-label">Marks per Question</div>
+                        <div class="marks-item-value">1</div>
+                    </div>
+                    <div class="marks-item">
+                        <div class="marks-item-label">Total Marks</div>
+                        <div class="marks-item-value">{{TOTAL_MARKS}}</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Instructions Section -->
+            <section class="instructions-section">
+                <div class="instructions-header">
+                    <div class="instructions-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                    </div>
+                    <h2 class="instructions-title">General Instructions</h2>
+                </div>
+                
+                <ul class="instructions-list">
+                    <li class="instruction-item">
+                        <div class="instruction-number">1</div>
+                        <div class="instruction-text">
+                            <strong>Read all questions carefully</strong> before attempting to answer.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">2</div>
+                        <div class="instruction-text">
+                            <strong>Write your Roll Number</strong> on the answer sheet before starting.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">3</div>
+                        <div class="instruction-text">
+                            This paper contains <strong>5 questions</strong> of <strong>1 marks each</strong>.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">4</div>
+                        <div class="instruction-text">
+                            <strong>Total time allowed is 90 minutes</strong>. Manage your time accordingly.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">5</div>
+                        <div class="instruction-text">
+                            <strong>Attempt all questions</strong> in sequence. No selective answering is allowed.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">6</div>
+                        <div class="instruction-text">
+                            Use <strong>black/blue pen only</strong> for writing answers.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">7</div>
+                        <div class="instruction-text">
+                            <strong>Calculators are not allowed</strong> unless specified.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">8</div>
+                        <div class="instruction-text">
+                            <strong>Mobile phones must be switched off</strong> and kept away.
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- Questions Section -->
+            <section class="questions-section">
+                <div class="questions-header">
+                    <h2 class="questions-title">Questions</h2>
+                    <p class="questions-subtitle">Answer all questions. Each question carries equal marks.</p>
+                </div>
+                
+                <div class="questions-list">
+                    <!-- Questions will be injected here by backend -->
+                    
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number">Q1.</div>
+                <div class="question-type-badge">MCQ</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    Which treaty officially ended World War I?
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">Treaty of Versailles</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">Treaty of Trianon</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">C</div>
+                    <div class="option-text">Treaty of Saint-Germain</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">D</div>
+                    <div class="option-text">Treaty of Brest-Litovsk</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number">Q2.</div>
+                <div class="question-type-badge">MCQ</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    What was the primary reason for the United States entering World War II?
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">Attack on Pearl Harbor</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">Invasion of Poland</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">C</div>
+                    <div class="option-text">Fall of France</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">D</div>
+                    <div class="option-text">Battle of Britain</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number">Q3.</div>
+                <div class="question-type-badge">MCQ</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    Which event is often cited as the immediate cause of World War I?
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">Assassination of Archduke Franz Ferdinand</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">The sinking of the Lusitania</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">C</div>
+                    <div class="option-text">The invasion of Belgium</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">D</div>
+                    <div class="option-text">The Zimmerman Telegram</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number">Q4.</div>
+                <div class="question-type-badge">MCQ</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    Which of the following countries was NOT part of the Axis Powers during World War II?
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">Germany</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">Italy</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">C</div>
+                    <div class="option-text">Japan</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">D</div>
+                    <div class="option-text">Soviet Union</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number">Q5.</div>
+                <div class="question-type-badge">MCQ</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    What was the significance of the Battle of Stalingrad in World War II?
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">It marked the first major defeat of the German army.</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">It was the largest naval battle of the war.</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">C</div>
+                    <div class="option-text">It led to the liberation of France.</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">D</div>
+                    <div class="option-text">It was the first use of atomic bombs.</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="paper-footer">
+            <div class="footer-left">
+                <p class="generated-by">
+                    Generated by <span class="generator-name">AI Paper Generator Pro</span>
+                </p>
+                <p style="font-size: 12px; color: #95a5a6; margin-top: 5px;">
+                    This is a computer-generated question paper. For any discrepancies, contact the examination department.
+                </p>
+            </div>
+            
+            <div class="footer-right">
+                <div class="qr-container">
+                    <div class="qr-code" id="qrCodeContainer">
+                        <img src="" alt="QR Code" id="qrImage">
+                    </div>
+                    <div class="qr-label">Scan for Digital Copy</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Enhancements and Utilities
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Handle Logo Error
+            const logoImg = document.getElementById('instituteLogo');
+            if (logoImg) {
+                logoImg.onerror = function() {
+                    this.style.display = 'none';
+                    this.parentElement.innerHTML = `
+                        <div style="width:100px;height:100px;background:#2c3e50;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:600;text-align:center;padding:10px;border-radius:8px;">
+                            <div style="font-size:14px;">sachin jangir</div>
+                            <div style="font-size:10px;margin-top:5px;opacity:0.8;">LOGO</div>
+                        </div>
+                    `;
+                };
+                
+                // Check if logo path is invalid
+                if (logoImg.src.includes('None') || !logoImg.src.trim()) {
+                    logoImg.style.display = 'none';
+                    logoImg.parentElement.innerHTML = `
+                        <div style="width:100px;height:100px;background:#2c3e50;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:600;text-align:center;padding:10px;border-radius:8px;">
+                            <div style="font-size:14px;">sachin jangir</div>
+                            <div style="font-size:10px;margin-top:5px;opacity:0.8;">LOGO</div>
+                        </div>
+                    `;
+                }
+            }
+            
+            // 2. Handle QR Code Error
+            const qrImage = document.getElementById('qrImage');
+            const qrContainer = document.getElementById('qrCodeContainer');
+            
+            if (qrImage && qrContainer) {
+                qrImage.onerror = function() {
+                    this.style.display = 'none';
+                    qrContainer.innerHTML = `
+                        <div style="width:80px;height:80px;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#7f8c8d;font-size:12px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#7f8c8d">
+                                <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm13-2h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/>
+                            </svg>
+                        </div>
+                    `;
+                };
+                
+                // Check if QR URL is empty
+                if (!qrImage.src || qrImage.src.includes('None') || qrImage.src.includes('{{')) {
+                    qrImage.style.display = 'none';
+                    qrContainer.innerHTML = `
+                        <div style="width:80px;height:80px;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#7f8c8d;font-size:12px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#7f8c8d">
+                                <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm13-2h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/>
+                            </svg>
+                        </div>
+                    `;
+                }
+            }
+            
+            // 3. Add page numbers for print
+            const questions = document.querySelectorAll('.question-item');
+            questions.forEach((question, index) => {
+                if (index > 0 && index % 5 === 0) {
+                    const pageBreak = document.createElement('div');
+                    pageBreak.style.cssText = 'page-break-before: always; height: 0;';
+                    question.parentNode.insertBefore(pageBreak, question);
+                }
+            });
+            
+            // 4. Show hints on click
+            const hintSections = document.querySelectorAll('.hint-section');
+            hintSections.forEach(hint => {
+                const showHintBtn = document.createElement('button');
+                showHintBtn.textContent = 'Show Hint';
+                showHintBtn.style.cssText = `
+                    background: #f1c40f;
+                    color: white;
+                    border: none;
+                    padding: 5px 10px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                    font-weight: 600;
+                `;
+                showHintBtn.onclick = function() {
+                    hint.style.display = hint.style.display === 'block' ? 'none' : 'block';
+                    this.textContent = hint.style.display === 'block' ? 'Hide Hint' : 'Show Hint';
+                };
+                
+                if (hint.parentNode) {
+                    hint.parentNode.insertBefore(showHintBtn, hint);
+                }
+            });
+            
+            // 5. Add print button
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                    <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+                </svg>
+                Print Paper
+            `;
+            printBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #2c3e50;
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 25px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 1000;
+                transition: all 0.3s;
+            `;
+            printBtn.onmouseover = () => {
+                printBtn.style.background = '#34495e';
+                printBtn.style.transform = 'translateY(-2px)';
+            };
+            printBtn.onmouseout = () => {
+                printBtn.style.background = '#2c3e50';
+                printBtn.style.transform = 'translateY(0)';
+            };
+            printBtn.onclick = () => window.print();
+            
+            document.body.appendChild(printBtn);
+            
+            // 6. Add question counter
+            const questionCount = questions.length;
+            const counterDisplay = document.createElement('div');
+            counterDisplay.textContent = `Total Questions: ${questionCount}`;
+            counterDisplay.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                background: rgba(52, 152, 219, 0.9);
+                color: white;
+                padding: 8px 15px;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            `;
+            document.body.appendChild(counterDisplay);
+        });
+    </script>
+</body>
+</html>
