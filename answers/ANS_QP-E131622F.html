@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Key — QP-E131622F</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            /* Colors - Professional Green Theme */
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #d1fae5;
+            --secondary: #3b82f6;
+            --accent: #8b5cf6;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.15);
+            --shadow-xl: 0 20px 40px -10px rgba(0,0,0,0.2);
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-full: 9999px;
+            
+            /* Typography */
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            /* Layout */
+            --max-width: 1100px;
+        }
+        
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            color: var(--gray-800);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        /* ===== ANSWER SHEET ===== */
+        .answer-sheet {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            padding: 40px 50px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+        }
+        
+        /* Watermark */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 100px;
+            font-weight: 900;
+            color: var(--primary-light);
+            opacity: 0.15;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            z-index: 0;
+        }
+        
+        /* Pattern */
+        .pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 1px 1px, var(--gray-200) 1px, transparent 0);
+            background-size: 30px 30px;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* ===== HEADER ===== */
+        .answer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .header-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .header-info h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+        
+        .header-info .subtitle {
+            font-size: 16px;
+            color: var(--gray-600);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .subtitle i {
+            color: var(--primary);
+        }
+        
+        .header-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .meta-badge {
+            background: var(--gray-50);
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray-500);
+            font-weight: 600;
+        }
+        
+        .meta-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gray-800);
+            font-family: var(--font-mono);
+        }
+        
+        /* ===== TITLE SECTION ===== */
+        .title-section {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main-title {
+            font-size: 36px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .main-subtitle {
+            font-size: 18px;
+            color: var(--gray-600);
+            margin-bottom: 20px;
+        }
+        
+        /* Stats Cards */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-light);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 20px;
+            color: var(--primary);
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        /* ===== ANSWERS GRID ===== */
+        .answers-section {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .answers-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .answers-header h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--gray-900);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .answers-count {
+            background: var(--primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 700;
+        }
+        
+        /* Answers Grid */
+        .answers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .answers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Answer Card */
+        .answer-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            border: 2px solid var(--gray-200);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .answer-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .answer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+        }
+        
+        /* Card Header */
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .question-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .question-number {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 18px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .question-type {
+            background: var(--gray-100);
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-700);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Answer Section */
+        .answer-section {
+            background: var(--primary-light);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .answer-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-600);
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .answer-label i {
+            color: var(--primary);
+        }
+        
+        .answer-content {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            line-height: 1.4;
+        }
+        
+        .answer-option {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        /* Explanation Section */
+        .explanation-section {
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .explanation-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-600);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .explanation-label i {
+            color: var(--primary);
+        }
+        
+        .explanation-content {
+            font-size: 15px;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+        
+        /* Marks Section */
+        .marks-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--gray-300);
+        }
+        
+        .marks-badge {
+            background: var(--gray-100);
+            padding: 6px 15px;
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray-700);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .marks-value {
+            color: var(--primary);
+            font-weight: 800;
+        }
+        
+        .difficulty-badge {
+            padding: 6px 15px;
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .difficulty-badge.easy {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .difficulty-badge.medium {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+        
+        .difficulty-badge.hard {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+        
+        /* ===== FOOTER ===== */
+        .answer-footer {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px dashed var(--gray-300);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-info h4 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 10px;
+        }
+        
+        .footer-info p {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 15px;
+        }
+        
+        .accuracy-badge {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 10px 25px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .answer-sheet {
+                padding: 25px;
+            }
+            
+            .answer-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .header-left {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .main-title {
+                font-size: 28px;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .answer-sheet {
+                padding: 20px;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-title {
+                font-size: 24px;
+            }
+        }
+        
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .answer-sheet {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                padding: 20mm;
+                margin: 0;
+            }
+            
+            .watermark, .pattern {
+                display: none;
+            }
+            
+            .answer-card {
+                break-inside: avoid;
+                border: 1px solid #ddd;
+                box-shadow: none;
+            }
+            
+            .answer-card:hover {
+                transform: none;
+                border-color: #ddd;
+            }
+            
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="answer-sheet">
+            <!-- Background Elements -->
+            <div class="watermark">ANSWER KEY</div>
+            <div class="pattern"></div>
+            
+            <!-- Header -->
+            <header class="answer-header">
+                <div class="header-left">
+                    <div class="header-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="header-info">
+                        <h1>sachin jangir</h1>
+                        <div class="subtitle">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Mathematics • Class Grade 10</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-meta">
+                    <div class="meta-badge">
+                        <div class="meta-label">Paper ID</div>
+                        <div class="meta-value">QP-E131622F</div>
+                    </div>
+                    <div class="meta-badge">
+                        <div class="meta-label">Date</div>
+                        <div class="meta-value">04-12-2025</div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Title Section -->
+            <section class="title-section">
+                <h1 class="main-title">Answer Key & Solutions</h1>
+                <p class="main-subtitle">Topic: Algebra • Difficulty: MEDIUM</p>
+                
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Total Questions</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">Marks Per Question</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-value">90 Min</div>
+                        <div class="stat-label">Duration</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-value">MEDIUM</div>
+                        <div class="stat-label">Difficulty Level</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Answers Section -->
+            <section class="answers-section">
+                <div class="answers-header">
+                    <h2>
+                        <i class="fas fa-check-circle"></i>
+                        Detailed Solutions
+                    </h2>
+                    <div class="answers-count">
+                        5 Answers
+                    </div>
+                </div>
+                
+                <div class="answers-grid" id="answersList">
+                    <section class="answer-block" aria-label="Answer for question 1">
+  <div class="q-title">Q1. <span class="marks">(2 marks)</span></div>
+  <div class="answer">Answer: <strong>x = 4</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">To solve for x, subtract 3 from both sides to get 2x = 8, then divide by 2 to find x = 4.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 2">
+  <div class="q-title">Q2. <span class="marks">(2 marks)</span></div>
+  <div class="answer">Answer: <strong>(x - 2)(x - 3)</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The expression x^2 - 5x + 6 factors into (x - 2)(x - 3) because -2 and -3 add to -5 and multiply to 6.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 3">
+  <div class="q-title">Q3. <span class="marks">(2 marks)</span></div>
+  <div class="answer">Answer: <strong>x = 9</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">To solve for x, subtract 2x from both sides to get x - 4 = 5, then add 4 to both sides to find x = 9.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 4">
+  <div class="q-title">Q4. <span class="marks">(2 marks)</span></div>
+  <div class="answer">Answer: <strong>0.5</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">Rearranging the equation to slope-intercept form (y = mx + b) gives y = 0.5x + 2, so the slope (m) is 0.5.</div>
+</section>
+
+<section class="answer-block" aria-label="Answer for question 5">
+  <div class="q-title">Q5. <span class="marks">(2 marks)</span></div>
+  <div class="answer">Answer: <strong>y = 3x - 2</strong></div>
+  <div class="explanation" style="margin-top:6px;color:#374151">The slope-intercept form of a line is y = mx + b, where m is the slope and b is the y-intercept. Here, m = 3 and b = -2.</div>
+</section>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="answer-footer">
+                <div class="footer-info">
+                    <h4>Generated by AI Paper Generator</h4>
+                    <p>Comprehensive • Accurate • Educational</p>
+                    <div class="accuracy-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% Verified Solutions</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced Clean-up and Features
+        (function() {
+            // Add animations to answer cards
+            const answerCards = document.querySelectorAll('.answer-card');
+            answerCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fade-in');
+            });
+            
+            // Print button functionality
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = '<i class="fas fa-print"></i> Print Answer Key';
+            printBtn.className = 'print-btn';
+            printBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 25px;
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s;
+            `;
+            
+            printBtn.onclick = () => window.print();
+            printBtn.onmouseover = () => {
+                printBtn.style.transform = 'translateY(-3px)';
+                printBtn.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
+            };
+            printBtn.onmouseout = () => {
+                printBtn.style.transform = 'translateY(0)';
+                printBtn.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+            };
+            
+            document.body.appendChild(printBtn);
+            
+            // Add copy functionality for answers
+            answerCards.forEach(card => {
+                const answerContent = card.querySelector('.answer-content');
+                if (answerContent) {
+                    answerContent.style.cursor = 'pointer';
+                    answerContent.title = 'Click to copy answer';
+                    answerContent.onclick = function() {
+                        const text = this.textContent;
+                        navigator.clipboard.writeText(text).then(() => {
+                            const original = this.innerHTML;
+                            this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                            this.style.color = 'var(--primary)';
+                            
+                            setTimeout(() => {
+                                this.innerHTML = original;
+                                this.style.color = '';
+                            }, 1500);
+                        });
+                    };
+                }
+            });
+            
+            // Add smooth scroll to top
+            const scrollBtn = document.createElement('button');
+            scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+            scrollBtn.style.cssText = `
+                position: fixed;
+                bottom: 70px;
+                right: 20px;
+                background: var(--gray-800);
+                color: white;
+                border: none;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                transition: all 0.3s;
+                opacity: 0.7;
+            `;
+            
+            scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+            scrollBtn.onmouseover = () => {
+                scrollBtn.style.opacity = '1';
+                scrollBtn.style.transform = 'translateY(-3px)';
+            };
+            scrollBtn.onmouseout = () => {
+                scrollBtn.style.opacity = '0.7';
+                scrollBtn.style.transform = 'translateY(0)';
+            };
+            
+            document.body.appendChild(scrollBtn);
+            
+            // Show/hide scroll button
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.style.display = 'flex';
+                } else {
+                    scrollBtn.style.display = 'none';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
