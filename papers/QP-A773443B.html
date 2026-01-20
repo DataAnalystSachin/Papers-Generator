@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Applications - Question Paper - QP-A773443B</title>
+    
+    <!-- Professional Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --primary-light: #c7d2fe;
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+            --text: #334155;
+            --text-light: #64748b;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-serif: 'Source Serif Pro', serif;
+        }
+        
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px 15px;
+            min-height: 100vh;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        /* ===== PAPER CONTAINER ===== */
+        .paper-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: var(--shadow-xl);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(79, 70, 229, 0.1);
+        }
+        
+        /* ===== HEADER ===== */
+        .paper-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 25px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-top {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .logo-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: white;
+            padding: 5px;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            flex-shrink: 0;
+        }
+        
+        .logo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .institute-info h1 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            word-wrap: break-word;
+        }
+        
+        .institute-info p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        
+        /* Header Right Section */
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .paper-id {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 15px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .paper-id-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .paper-id-value {
+            font-size: 15px;
+            font-weight: 700;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        
+        /* QR Code Section */
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .qr-container {
+            width: 90px;
+            height: 90px;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .qr-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .qr-label {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Header Bottom */
+        .header-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        
+        .subject-info h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            word-wrap: break-word;
+        }
+        
+        .subject-info h3 {
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0.9;
+            word-wrap: break-word;
+        }
+        
+        .exam-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .meta-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 8px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .meta-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+            margin-bottom: 3px;
+        }
+        
+        .meta-value {
+            font-size: 13px;
+            font-weight: 600;
+            word-break: break-word;
+        }
+        
+        /* ===== MAIN CONTENT ===== */
+        .paper-content {
+            padding: 25px 20px;
+        }
+        
+        /* Title Section */
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .paper-title {
+            font-family: var(--font-heading);
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .paper-subtitle {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        /* Marks Banner */
+        .marks-banner {
+            background: linear-gradient(135deg, var(--secondary), #0d9488);
+            color: white;
+            padding: 20px 15px;
+            border-radius: var(--radius-lg);
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .marks-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .marks-item {
+            text-align: center;
+        }
+        
+        .marks-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+        
+        .marks-value {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: monospace;
+        }
+        
+        #calculated-marks {
+            font-size: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Instructions */
+        .instructions-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin-bottom: 25px;
+            border: 1px solid var(--border);
+        }
+        
+        .instructions-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .instructions-title i {
+            color: var(--primary);
+        }
+        
+        .instructions-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        
+        .instruction-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 6px 0;
+        }
+        
+        .instruction-number {
+            width: 22px;
+            height: 22px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .instruction-text {
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.5;
+        }
+        
+        /* Questions Section */
+        .questions-section {
+            margin-top: 30px;
+        }
+        
+        .questions-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .questions-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        
+        .questions-subtitle {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        /* Questions List */
+        .questions-list {
+            counter-reset: question-counter;
+        }
+        
+        .question-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .question-header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .question-number {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            order: 1;
+        }
+        
+        .question-number::before {
+            counter-increment: question-counter;
+            content: "Q" counter(question-counter) ". ";
+        }
+        
+        .question-type {
+            background: linear-gradient(135deg, var(--primary-light), #e0e7ff);
+            color: var(--primary-dark);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            order: 2;
+            align-self: flex-start;
+        }
+        
+        .question-content {
+            position: relative;
+        }
+        
+        .question-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 15px;
+            font-family: var(--font-serif);
+            text-align: justify;
+            word-wrap: break-word;
+        }
+        
+        .question-image {
+            text-align: center;
+            margin: 15px 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        
+        .question-image img {
+            max-width: 100%;
+            max-height: 250px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Options */
+        .options-container {
+            margin-top: 20px;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        
+        .option-item {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 12px 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .option-item:active {
+            background: #e0e7ff;
+            transform: scale(0.98);
+        }
+        
+        .option-letter {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .option-text {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Hint */
+        .hint-section {
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border-left: 3px solid var(--warning);
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: var(--radius-sm);
+            display: none;
+        }
+        
+        .hint-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #d97706;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .hint-text {
+            font-size: 13px;
+            color: #92400e;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        
+        /* ===== FOOTER ===== */
+        .paper-footer {
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .generated-by {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        
+        .generator-name {
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        
+        /* ===== PRINT BUTTON ===== */
+        .print-button {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            font-family: var(--font-body);
+            font-size: 14px;
+        }
+        
+        .print-button:active {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .download-btn {
+            position: fixed;
+            bottom: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, var(--secondary), #0d9488);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            font-family: var(--font-body);
+            font-size: 14px;
+        }
+        
+        .download-btn:active {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        /* Tablet */
+        @media (min-width: 768px) {
+            body {
+                padding: 30px 20px;
+            }
+            
+            .paper-header {
+                padding: 30px 30px;
+            }
+            
+            .paper-content {
+                padding: 30px;
+            }
+            
+            .header-top {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            
+            .logo-section {
+                justify-content: flex-start;
+                text-align: left;
+                gap: 20px;
+            }
+            
+            .header-right {
+                align-items: flex-end;
+                width: auto;
+            }
+            
+            .header-bottom {
+                flex-direction: row;
+                text-align: left;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .exam-meta {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 12px;
+            }
+            
+            .meta-item {
+                min-width: 100px;
+            }
+            
+            .paper-title {
+                font-size: 28px;
+            }
+            
+            .marks-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .marks-value {
+                font-size: 26px;
+            }
+            
+            .instructions-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .options-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .question-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .question-type {
+                order: 3;
+            }
+            
+            .print-button, .download-btn {
+                padding: 12px 24px;
+                font-size: 15px;
+            }
+        }
+        
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .paper-header {
+                padding: 30px 40px;
+            }
+            
+            .paper-content {
+                padding: 40px;
+            }
+            
+            .paper-title {
+                font-size: 32px;
+            }
+            
+            .marks-value {
+                font-size: 28px;
+            }
+            
+            .question-text {
+                font-size: 16px;
+            }
+            
+            .print-button:hover, .download-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: var(--shadow-xl);
+            }
+            
+            .option-item:hover {
+                background: #e0e7ff;
+                border-color: var(--primary-light);
+                transform: translateX(5px);
+            }
+            
+            .question-item:hover {
+                border-color: var(--primary);
+                box-shadow: var(--shadow-md);
+                transform: translateY(-2px);
+            }
+        }
+        
+        /* Small Mobile */
+        @media (max-width: 360px) {
+            .logo-image {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .institute-info h1 {
+                font-size: 20px;
+            }
+            
+            .qr-container {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .exam-meta {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            
+            .print-button, .download-btn {
+                padding: 10px 16px;
+                font-size: 13px;
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+                width: calc(50% - 15px);
+            }
+            
+            .print-button {
+                right: 10px;
+            }
+            
+            .download-btn {
+                left: 10px;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .paper-container {
+                box-shadow: none;
+                border: none;
+            }
+            
+            .print-button, .download-btn {
+                display: none;
+            }
+            
+            .question-item {
+                border: 1px solid #ddd;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+            
+            .option-item {
+                background: #f8fafc;
+            }
+            
+            .question-item:hover {
+                transform: none;
+                border-color: #ddd;
+            }
+            
+            .qr-section {
+                display: none;
+            }
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .question-item {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* ===== UTILITY CLASSES ===== */
+        .hide-on-mobile {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .hide-on-mobile {
+                display: block;
+            }
+            
+            .hide-on-desktop {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="paper-container">
+        <!-- Header -->
+        <header class="paper-header">
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="logo-image">
+                        <img src="https://raw.githubusercontent.com/DataAnalystSachin/Papers-Generator/fdbbd34b037fd774e20697ab42d1f6fea69fd4d8/my_logo.png" 
+                             alt="Institute Logo"
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSI0MCIgZmlsbD0iIzRmNDZlNSIvPjx0ZXh0IHg9IjQwIiB5PSI0NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iMC4zZW0iPklOU1RJVFVURTwvdGV4dD48L3N2Zz4='">
+                    </div>
+                    <div class="institute-info">
+                        <h1>Skill Course</h1>
+                        <p>Excellence in Education</p>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="paper-id">
+                        <div class="paper-id-label">Paper ID</div>
+                        <div class="paper-id-value">QP-A773443B</div>
+                    </div>
+                    
+                    <!-- QR Code Section -->
+                    <div class="qr-section">
+                        <div class="qr-container">
+                            <img src="{{QR_URL}}" alt="Question Paper QR Code">
+                        </div>
+                        <div class="qr-label">SCAN FOR ANSWER KEY</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-bottom">
+                <div class="subject-info">
+                    <h2>Computer Applications</h2>
+                    <h3>Spreadsheets</h3>
+                </div>
+                
+                <div class="exam-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Class</div>
+                        <div class="meta-value">advanced</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Date</div>
+                        <div class="meta-value">20-01-2026</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Time</div>
+                        <div class="meta-value">90 Minutes</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Difficulty</div>
+                        <div class="meta-value">Medium</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="paper-content">
+            <!-- Title -->
+            <section class="title-section">
+                <h1 class="paper-title">Term Examination Question Paper</h1>
+                <p class="paper-subtitle">Academic Session 2024-2025</p>
+            </section>
+            
+            <!-- Marks Banner -->
+            <section class="marks-banner">
+                <div class="marks-grid">
+                    <div class="marks-item">
+                        <div class="marks-label">Total Questions</div>
+                        <div class="marks-value">10</div>
+                    </div>
+                    <div class="marks-item">
+                        <div class="marks-label">Marks per Question</div>
+                        <div class="marks-value">2</div>
+                    </div>
+                    <div class="marks-item">
+                        <div class="marks-label">Total Marks</div>
+                        <div class="marks-value" id="calculated-marks">20</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Instructions -->
+            <section class="instructions-section">
+                <h3 class="instructions-title">
+                    <i class="fas fa-info-circle"></i>
+                    General Instructions
+                </h3>
+                <ul class="instructions-list">
+                    <li class="instruction-item">
+                        <div class="instruction-number">1</div>
+                        <div class="instruction-text">
+                            This paper contains <strong>10 questions</strong> of <strong>2 marks each</strong>.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">2</div>
+                        <div class="instruction-text">
+                            Total time allowed is <strong>90 minutes</strong>.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">3</div>
+                        <div class="instruction-text">
+                            Write your <strong>Roll Number</strong> on the answer sheet.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">4</div>
+                        <div class="instruction-text">
+                            <strong>Attempt all questions</strong> in sequence.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">5</div>
+                        <div class="instruction-text">
+                            Use <strong>black/blue pen</strong> for writing answers.
+                        </div>
+                    </li>
+                    <li class="instruction-item">
+                        <div class="instruction-number">6</div>
+                        <div class="instruction-text">
+                            <strong>Calculators are not allowed</strong>.
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- Questions -->
+            <section class="questions-section">
+                <div class="questions-header">
+                    <h2 class="questions-title">Questions</h2>
+                    <p class="questions-subtitle">Answer all questions. Each question carries equal marks.</p>
+                </div>
+                
+                <div class="questions-list">
+                    
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number"></div>
+                <div class="question-type">MCQ</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    स्प्रेडशीट में VLOOKUP फ़ंक्शन का मुख्य उपयोग क्या है?
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">डेटा को सॉर्ट करना</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">दो तालिकाओं के बीच डेटा खोजना</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">C</div>
+                    <div class="option-text">चार्ट बनाना</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">D</div>
+                    <div class="option-text">सेल को फॉर्मेट करना</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number"></div>
+                <div class="question-type">SHORT</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    स्प्रेडशीट में सेल रेफरेंस A1 का क्या अर्थ है?
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number"></div>
+                <div class="question-type">TF</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    क्या स्प्रेडशीट में एक ही सेल में दो फॉर्मूले एक साथ लिखे जा सकते हैं? (सही/गलत)
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">सही</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">गलत</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number"></div>
+                <div class="question-type">MCQ</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    स्प्रेडशीट में पिवट टेबल का उपयोग किस लिए किया जाता है?
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">डेटा का सारांश और विश्लेषण करने के लिए</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">डेटा को छुपाने के लिए</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">C</div>
+                    <div class="option-text">सेल की रंगाई के लिए</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">D</div>
+                    <div class="option-text">डेटा को निर्यात करने के लिए</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number"></div>
+                <div class="question-type">SHORT</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    स्प्रेडशीट में COUNTIF फ़ंक्शन क्या करता है?
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number"></div>
+                <div class="question-type">MCQ</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    स्प्रेडशीट में सेल को लॉक करने के लिए कौन सा सिंबल उपयोग किया जाता है?
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">#</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">$</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">C</div>
+                    <div class="option-text">&amp;</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">D</div>
+                    <div class="option-text">*</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number"></div>
+                <div class="question-type">MCQ</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    स्प्रेडशीट में डेटा को तेजी से भरने के लिए कौन सा फीचर उपयोग किया जाता है?
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">ऑटोफिल</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">फिल्टर</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">C</div>
+                    <div class="option-text">सॉर्ट</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">D</div>
+                    <div class="option-text">कंडीशनल फॉर्मेटिंग</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number"></div>
+                <div class="question-type">SHORT</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    स्प्रेडशीट में एक कॉलम को छुपाने का क्या लाभ है?
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number"></div>
+                <div class="question-type">FILL</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    स्प्रेडशीट में IF फ़ंक्शन का सामान्य स्वरूप क्या है?
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+
+        <div class="question-item">
+            <div class="question-header">
+                <div class="question-number"></div>
+                <div class="question-type">MCQ</div>
+            </div>
+            
+            <div class="question-content">
+                <div class="question-text">
+                    स्प्रेडशीट में डेटा को सॉर्ट करने के लिए कौन सा विकल्प सही है?
+                </div>
+                
+                <div class="options-container"><div class="options-grid">
+                <div class="option-item">
+                    <div class="option-letter">A</div>
+                    <div class="option-text">डेटा &gt; सॉर्ट रेंज</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">B</div>
+                    <div class="option-text">फॉर्मूला &gt; सॉर्ट</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">C</div>
+                    <div class="option-text">इन्सर्ट &gt; सॉर्ट</div>
+                </div>
+                
+                <div class="option-item">
+                    <div class="option-letter">D</div>
+                    <div class="option-text">फाइल &gt; सॉर्ट</div>
+                </div>
+                </div></div>
+                
+            </div>
+        </div>
+        
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="paper-footer">
+            <p class="generated-by">
+                Generated by <span class="generator-name">Skill Course</span>
+            </p>
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 8px;">
+                Computer-generated question paper • For official use only
+            </p>
+        </footer>
+    </div>
+
+    <!-- Action Buttons -->
+    <button class="print-button" onclick="window.print()">
+        <i class="fas fa-print"></i>
+        <span class="hide-on-mobile">Print Paper</span>
+        <span class="hide-on-desktop">Print</span>
+    </button>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Calculate total marks only if needed (fallback)
+            const totalMarksElement = document.getElementById('calculated-marks');
+            
+            // If total marks is showing placeholder, calculate it
+            if (totalMarksElement && totalMarksElement.textContent.includes('20')) {
+                const totalQuestions = parseInt('10') || 0;
+                const marksPerQuestion = parseInt('2') || 0;
+                const calculated = totalQuestions * marksPerQuestion;
+                
+                // Set only the total marks value, no formula
+                totalMarksElement.textContent = calculated;
+            }
+            
+            // Add hint toggle functionality
+            const hints = document.querySelectorAll('.hint-section');
+            hints.forEach(hint => {
+                const showBtn = document.createElement('button');
+                showBtn.textContent = 'Show Hint';
+                showBtn.className = 'hint-toggle-btn';
+                showBtn.style.cssText = `
+                    background: linear-gradient(135deg, #f59e0b, #d97706);
+                    color: white;
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 6px;
+                    font-size: 13px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                    font-weight: 600;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    transition: all 0.3s;
+                `;
+                
+                const icon = document.createElement('i');
+                icon.className = 'fas fa-lightbulb';
+                showBtn.prepend(icon);
+                
+                showBtn.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                showBtn.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
+                
+                showBtn.onclick = (e) => {
+                    e.preventDefault();
+                    hint.style.display = hint.style.display === 'block' ? 'none' : 'block';
+                    icon.className = hint.style.display === 'block' ? 'fas fa-eye-slash' : 'fas fa-lightbulb';
+                    showBtn.innerHTML = hint.style.display === 'block' ? 
+                        `<i class="fas fa-eye-slash"></i> Hide Hint` : 
+                        `<i class="fas fa-lightbulb"></i> Show Hint`;
+                };
+                
+                if (hint.parentNode) {
+                    hint.parentNode.insertBefore(showBtn, hint);
+                }
+            });
+            
+            // Handle logo error
+            const logoImg = document.querySelector('.logo-image img');
+            if (logoImg) {
+                logoImg.onerror = function() {
+                    this.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.style.cssText = `
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        font-weight: 600;
+                        text-align: center;
+                        padding: 10px;
+                        font-size: 12px;
+                        line-height: 1.2;
+                    `;
+                    fallback.textContent = 'Skill Course'.substring(0, 3);
+                    this.parentNode.appendChild(fallback);
+                };
+            }
+            
+            // Handle QR code error
+            const qrImg = document.querySelector('.qr-container img');
+            if (qrImg) {
+                qrImg.onerror = function() {
+                    this.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.style.cssText = `
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        color: var(--primary);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        text-align: center;
+                        padding: 10px;
+                        font-size: 12px;
+                        line-height: 1.2;
+                    `;
+                    fallback.textContent = 'QR Code';
+                    this.parentNode.appendChild(fallback);
+                };
+            }
+            
+            // Add animation to question items
+            const questionItems = document.querySelectorAll('.question-item');
+            questionItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Add option selection effect
+            const optionItems = document.querySelectorAll('.option-item');
+            optionItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove previous selection
+                    optionItems.forEach(opt => {
+                        opt.style.background = '#f8fafc';
+                        opt.querySelector('.option-letter').style.background = 'linear-gradient(135deg, var(--primary), var(--primary-dark))';
+                    });
+                    
+                    // Select this option
+                    this.style.background = 'linear-gradient(135deg, #dbeafe, #c7d2fe)';
+                    this.querySelector('.option-letter').style.background = 'linear-gradient(135deg, var(--secondary), #0d9488)';
+                });
+            });
+            
+            // Improve touch experience for option items
+            optionItems.forEach(item => {
+                item.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                item.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+        
+        // PDF download handler
+        function handlePDFDownload() {
+            // This would trigger PDF download in real implementation
+            alert('PDF download functionality would be implemented with backend integration.');
+        }
+        
+        // Handle orientation change
+        window.addEventListener('orientationchange', function() {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 100);
+        });
+    </script>
+</body>
+</html>
